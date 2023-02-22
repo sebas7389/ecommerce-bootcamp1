@@ -15,8 +15,69 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
+.footer {
+  width: 100%;
+  padding: 50px 0px;
+  background-image: url(../Images/background-footer.svg);
+  background-size: cover;
+}
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 100px;
+}
+.footer__box {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.footer__logo img {
+  width: 180px;
+}
+.footer__terms {
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #7a7a7a;
+  font-size: 18px;
+}
+.footer__box h2 {
+  margin-bottom: 30px;
+  color: #343434;
+  font-weight: 700;
+}
+.footer__box h2--box a {
+  margin-top: 10px;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.footer__box h2--box a:hover {
+  opacity: 0.8;
+}
+.footer__box h2--box a .fab {
+  font-size: 20px;
+}
+.footer__box h2--box__copyright {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 40px;
+}
+.footer__box h2--box__copyright p {
+  margin-top: 20px;
+  color: #7a7a7a;
+}
+.footer__box h2--box__copyright hr {
+  border: none;
+  height: 1px;
+  background-color: #7a7a7a;
+}
+
 .main-nav {
-  background-color: rgb(15, 34, 156);
+  background-color: red;
   color: rgb(255, 255, 255);
   height: 60px;
   display: flex;
