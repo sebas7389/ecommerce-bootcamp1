@@ -1,0 +1,25 @@
+.main-nav {
+    background-color: $color-bg-primary;
+    color: $color-text-ligth;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    .nav-links {
+        padding: 2rem;
+        
+        .nav-item {
+            text-decoration: none;
+            color: $color-text-ligth;
+            &.active {
+                color: cornflowerblue;
+                font-weight: bold;
+            }
+
+            &:hover {
+                font-size: 1.2rem;
+                color: darkred;
+            }
+        }
+    }
+}
