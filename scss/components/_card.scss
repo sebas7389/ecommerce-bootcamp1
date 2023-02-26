@@ -1,4 +1,49 @@
-// .card {
-//     padding: 1rem;
-//     border: 1px solid $color-bg-primary;
-// }
+.card {
+    margin: 1rem;
+    border: 1px solid red;
+    background-color: black;
+    &__header {
+        height: 120px;
+        background-color:white;
+    }
+
+    &__img {
+        height: 120px;
+        width: 100%;
+    }
+
+    &__body {
+        padding: 1rem;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        border-bottom: 2px solid orangered;
+        color: white;
+    }
+
+    &__description {
+        padding: 1.5rem 0 2rem;
+        color: white;
+    }
+
+    &__price {
+        font-weight: 00;
+        font-size: 1.5rem;
+        color: $color-bg-primary;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    &__date {
+        color:white;
+    }
+    &__btn {
+        padding: 1rem 1.5rem;
+        background-color:red;
+        color: white;
+    }
+}
