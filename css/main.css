@@ -172,70 +172,22 @@ body {
     transform: translatex(-2200px);
   }
 }
-.container {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  bottom: 100px;
-  right: 5px;
-}
-
-input {
-  outline: none;
-  box-sizing: border-box;
-  height: 60px;
-  width: 0px;
-  padding: 0 20px;
-  color: #000;
-  border-radius: 50px;
-  font-size: 20px;
-  border: 1px solid #D50000;
-  transition: all 0.7s ease;
-}
-
-::-moz-placeholder {
-  color: grey;
-}
-
-::placeholder {
-  color: grey;
-}
-
-.btn {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 80px;
-  height: 80px;
-  background: #D50000;
-  line-height: 80px;
-  border-radius: 50%;
+.section-cards__header {
+  text-transform: uppercase;
+  font-size: 1.5rem;
   text-align: center;
-  cursor: pointer;
-  transition: 0.5s;
 }
-
-.btn i {
-  font-size: 25px;
-  color: white;
-  line-height: 80px;
-  transition: all 0.7s ease;
+.section-cards__subtitle {
+  color: #444;
+  font-size: 1rem;
 }
-
-.container:hover input {
-  width: 350px;
-}
-
-.container:hover i {
-  transform: rotate(-360deg);
-}
-
-.btn:hover {
-  background: #cc0000;
+.section-cards .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 @media screen and (min-width: 1000px) {
-  .container__btn {
+  .section-cards__header {
     display: flex;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1,59 +1,19 @@
-.container {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    padding: 10px;
-    bottom: 100px;
-    right: 5px;
-}
+.section-cards {
+    &__header {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    &__subtitle {
+        color: #444;
+        font-size: 1rem;
+    }
+   
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 
-input {
-	outline: none;
-	box-sizing: border-box;
-	height: 60px;
-	width: 0px;
-	padding: 0 20px;
-	color: #000;
-	border-radius: 50px;
-	font-size: 20px;
-	border: 1px solid #D50000;
-	transition: all .7s ease;
-}
-
-::placeholder {
-	color: grey;
-}
-
-.btn {
-	position:absolute;
-	right: 0px;
-	top: 0px;
-	width: 80px;
-	height: 80px;
-	background: #D50000;
-	line-height: 80px;
-	border-radius: 50%;
-	text-align: center;
-	cursor: pointer;
-	transition: .5s;
-}
-
-.btn i {
-	font-size: 25px;
-	color: white;
-	line-height: 80px;
-	transition: all .7s ease;
-}
-
-.container:hover input {
-	width: 350px;
-}
-
-.container:hover i{
-	transform: rotate(-360deg);
-}
-
-.btn:hover{
-	background: #cc0000;
 }
 
 @media screen and (min-width: 600px) {
@@ -63,9 +23,9 @@ input {
 }
 
 @media screen and (min-width: 1000px) {
-    .container {
-        &__btn {
+    .section-cards {
+        &__header {
             display: flex;
         }
     }
-}
+} 
