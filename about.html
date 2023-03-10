@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ecommerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
-    <title>Acerca de Nosotros</title>
-</head>
 
 <body>
     <header>
@@ -30,10 +30,12 @@
                 </li>
             </ul>
         </nav>
-        <div class="user-navbar">
+        <<div class="user-navbar">
             <div class="user-navbar__cart-icon-container">
-                <!-- TODO: add font icon and icon item -->
-                IC
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="user-navbar__user-avatar-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
             </div>
             <!-- TODO: avatar de la persona logueada o nombre -->
         </div>
@@ -59,57 +61,68 @@
         </div>
     </main>
 
-
     <footer class="footer">
         <div class="footer__column">
             <ul class="footer__contact-container">
-                <li class="footer__contact-item">
+                <li class="footer__contact-item"> 
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
+                        <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
                         Facebook
                     </a>
                 </li>
                 <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
+                        <i class="fa-brands fa-instagram 
+                        footer__contact-icon
+                        footer__contact-icon--instagram"></i>
                         Instagram
                     </a>
                 </li>
                 <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
+                        <i class="fa-brands fa-linkedin 
+                        footer__contact-icon
+                        footer__contact-icon--linkedin"></i>
                         LinkedIn
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-square-twitter
+                        footer__contact-icon
+                        footer__contact-icon--twitter"></i>
+                        Twitter
                     </a>
                 </li>
             </ul>
         </div>
         <div class="footer__column">
-            <img src="#" alt="Company Logo" class="footer__logo">
-            <h1 class="footer__company-name">
-                NOMBRE DE LA EMPRESA
-            </h1>
+            <img src="/assets/images/logo R.jpg" alt="Company Logo" class="footer__logo" width="50">
+            <h2 class="footer__company-name">
+                <b>Rsystem</b>
+            </h2>
             <p class="footer__copyrigth">
-                Todos los derechos reservados a Pepito
+                Todos los derechos reservados © 2023 <b>Rsystem</b>
             </p>
         </div>
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
+                        <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
                         Telefono
                     </a>
                 </li>
                 <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
                         Localizacion
                     </a>
                 </li>
                 <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
-                        <!-- Icono -->
-                        email
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        Email
                     </a>
                 </li>
             </ul>

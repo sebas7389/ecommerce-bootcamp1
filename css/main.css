@@ -273,7 +273,6 @@ body {
   align-items: center;
   padding: 0 1rem;
 }
-<<<<<<< HEAD
 .user-navbar__user-avatar {
   width: 40px;
 }
@@ -478,6 +477,49 @@ body {
   width: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+}
+
+body {
+  margin: 20px;
+  background-color: black;
+}
+
+.capa {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  background-color: black;
+}
+
+.parrafo {
+  z-index: 1;
+  width: 540px;
+  height: 440px;
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 1px 5px 25px;
+  border-radius: 5px;
+}
+
+.parrafo img {
+  width: 280px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 15px;
+}
+
+.title {
+  color: red;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .section-cards__category {
   color: white;
   padding: 50px;
@@ -512,64 +554,4 @@ body {
          column-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 6fr));
   }
-=======
-.main-nav .nav-links .nav-item:hover {
-  font-size: 1.2rem;
-  color: darkred;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "roboto", sans-serif;
-}
-
-body {
-  background-color: black;
-}
-
-.capa {
-  display: flex;
-  border: 2px solid red;
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-}
-
-.parrafo {
-  z-index: 1;
-  width: 50rem;
-  height: 27.5rem;
-  padding: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  box-shadow: 1px 5px 25px;
-  border-radius: 5px;
-  border: white solid;
-}
-
-.parrafo img {
-  border: 6px solid red;
-  width: 280px;
-  border-radius: 1rem;
-  float: left;
-  margin-right: 15px;
-}
-
-.title {
-  margin-bottom: 2rem;
-}
-
-.title h1 {
-  color: red;
-  text-align: center;
-  text-decoration: underline;
-}
-
-.parrafo p {
-  color: white;
->>>>>>> about
 }/*# sourceMappingURL=main.css.map */
