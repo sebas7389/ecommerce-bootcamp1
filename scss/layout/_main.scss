@@ -1,10 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .main {
     background-color:black;
+    padding: 1.5rem 0;
+    margin-top: 50px;
 }
 
 .contenido {
@@ -13,28 +11,29 @@
     background-size: cover;
     background-position:center;
     height: 50rem;
-    width: 100%;
+    max-width: 100%;
     position: relative;
 }
 
 .contenido h1 {
     color: white;
     text-align: center;
-    margin-top: 50px;
-    font-size: 4rem;
+    margin-top: 10px;
+    font-size: 5rem;
     text-transform:uppercase;
 }
 
 .logo_r {
     color: white;
     border-radius: 50%;
-    width: 50px;
+    width: 90px;
+    box-shadow: 0px 0px 20px 0px white;
 }
 
 .contenido::before {
     position: absolute;
     content: "";
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.608);
     top: 0;
     left: 0;
     right: 0;
@@ -46,6 +45,7 @@
 // Coursel
 .slider {
     width: 75vw;
+    height: auto;
     margin: auto;
     overflow:hidden;
 }
@@ -56,7 +56,7 @@
     -webkit-animation: scroll 40s linear infinite;
     width: calc(200px *22);
     max-width: 1000px;
-    min-width: 400px;
+    min-width: 200px;
 }
 
 .slider .slide {

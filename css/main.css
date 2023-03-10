@@ -19,23 +19,32 @@ body {
   margin: 1rem;
   border: 1px solid red;
   background-color: black;
+  box-shadow: 0px 0px 20px 0px white;
+  transition: 1s ease;
+  display: flex;
+  flex-direction: column;
 }
 .card__header {
   height: 120px;
-  background-color: white;
 }
 .card__img {
   height: 120px;
   width: 100%;
+  padding: auto;
 }
 .card__body {
   padding: 1rem;
+  margin-top: -1rem;
+  flex-grow: 1;
 }
 .card__title {
   font-weight: 500;
   font-size: 1.5rem;
-  border-bottom: 2px solid orangered;
+  border-bottom: 2px solid red;
   color: white;
+  background-color: black;
+  opacity: 0.7;
+  padding-bottom: 5px;
 }
 .card__description {
   padding: 1.5rem 0 2rem;
@@ -44,7 +53,7 @@ body {
 .card__price {
   font-weight: 0;
   font-size: 1.5rem;
-  color: rgb(15, 34, 156);
+  color: red;
 }
 .card__footer {
   display: flex;
@@ -53,11 +62,25 @@ body {
 }
 .card__date {
   color: white;
+  margin: 10px;
 }
 .card__btn {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
+  margin: 5px;
   background-color: red;
   color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px white;
+  transition: 500ms;
+}
+.card__btn:hover {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .whatsapp {
@@ -100,14 +123,10 @@ body {
   color: darkred;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .main {
   background-color: black;
+  padding: 1.5rem 0;
+  margin-top: 50px;
 }
 
 .contenido {
@@ -116,28 +135,29 @@ body {
   background-size: cover;
   background-position: center;
   height: 50rem;
-  width: 100%;
+  max-width: 100%;
   position: relative;
 }
 
 .contenido h1 {
   color: white;
   text-align: center;
-  margin-top: 50px;
-  font-size: 4rem;
+  margin-top: 10px;
+  font-size: 5rem;
   text-transform: uppercase;
 }
 
 .logo_r {
   color: white;
   border-radius: 50%;
-  width: 50px;
+  width: 90px;
+  box-shadow: 0px 0px 20px 0px white;
 }
 
 .contenido::before {
   position: absolute;
   content: "";
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.608);
   top: 0;
   left: 0;
   right: 0;
@@ -147,6 +167,7 @@ body {
 
 .slider {
   width: 75vw;
+  height: auto;
   margin: auto;
   overflow: hidden;
 }
@@ -157,7 +178,7 @@ body {
   -webkit-animation: scroll 40s linear infinite;
   width: 4400px;
   max-width: 1000px;
-  min-width: 400px;
+  min-width: 200px;
 }
 
 .slider .slide {
@@ -172,22 +193,38 @@ body {
     transform: translatex(-2200px);
   }
 }
-.section-cards__header {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  text-align: center;
+.section-cards__category {
+  color: white;
+  padding: 50px;
+  font-size: 3rem;
 }
-.section-cards__subtitle {
-  color: #444;
-  font-size: 1rem;
-}
-.section-cards .cards-container {
+
+.cards-container {
   display: grid;
+  box-shadow: 0 12px 16px rgba 0, 0, 0, 0.2;
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  }
+}
+@media screen and (min-width: 1200px) {
   .section-cards__header {
     display: flex;
+  }
+  .section-cards__img {
+    width: 30%;
+  }
+  .cards-container {
+    display: grid;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 6fr));
   }
 }/*# sourceMappingURL=main.css.map */
