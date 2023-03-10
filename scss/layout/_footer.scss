@@ -1,63 +1,65 @@
 .footer {
-    width: 100%;
-    padding: 50px 0px;
-    background-image: url(../Images/background-footer.svg);
-    background-size: cover;
+    background-color: $color-dark-gray;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &__column {
+        padding: 1rem;
+        margin: auto;
+    }
+    &__logo{
+        width: 100px;
+        border-radius: 50%;
+        
+    }
+    &__company-name{
+        color: white;
+        font-size: 25px;
+
+    }
+    &__copyrigth{
+        color: white;
+        margin: 10px;
+    }
+
+    &__contact-item {
+        list-style: none;
+        
+    }
+
+    &__contact-link {
+        color: white;
+        padding: .25rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: .5rem;
+        
+
+        
+    }
+
+    &__contact-icon {
+        font-size: 1.75rem;
+        &--facebook {
+            color: #38529a;
+        }
+        &--instagram {
+            color: #f14d59;
+        }
+        &--linkedin {
+            color: #0077b6;
+        }
+        &--twitter {
+            color:rgb(29 155 240);
+        }
+    }
+
 }
 
-.footer-container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: auto;
-        margin-top: 100px;
-        align-items: center;
-        background-color: black;
-        width: 100%;
-
-    &__box {
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-    }
-
-    &__logo img {
-        width: 180px;
-        background-color: white;
-        border-radius: 50%;
-    }
-
-    &__terms {
-        max-width: 350px;
-        margin-top: 20px;
-        font-weight: 500;
-        color: #7a7a7a;
-        font-size: 18px;
-    }
-
-    &__box h2 {
-        margin-bottom: 30px;
-        color: #343434;
-        font-weight: 700;
-
-        &--box a {
-            margin-top: 10px;
-            color: white;
-            font-weight: 600;
-        }
-
-        &--box a:hover {
-            opacity: 0.8;
-        }
-
-        &--box a .fab {
-            font-size: 20px;
-        }
-
-    }
-    &__copyright{
-        text-align: center;
+@media screen and (min-width: 600px) {
+    .footer {
+        flex-direction: row;
     }
 }
 
