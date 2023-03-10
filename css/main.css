@@ -15,7 +15,74 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
-<<<<<<< HEAD
+.card {
+  margin: 1rem;
+  border: 1px solid red;
+  background-color: black;
+  box-shadow: 0px 0px 20px 0px white;
+  transition: 1s ease;
+  display: flex;
+  flex-direction: column;
+}
+.card__header {
+  height: 120px;
+}
+.card__img {
+  height: 120px;
+  width: 100%;
+  padding: auto;
+}
+.card__body {
+  padding: 1rem;
+  margin-top: -1rem;
+  flex-grow: 1;
+}
+.card__title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-bottom: 2px solid red;
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+  padding-bottom: 5px;
+}
+.card__description {
+  padding: 1.5rem 0 2rem;
+  color: white;
+}
+.card__price {
+  font-weight: 0;
+  font-size: 1.5rem;
+  color: red;
+}
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.card__date {
+  color: white;
+  margin: 10px;
+}
+.card__btn {
+  padding: 1rem 1rem;
+  margin: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px white;
+  transition: 500ms;
+}
+.card__btn:hover {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -46,13 +113,45 @@ body {
   text-decoration: none;
   color: #0df053;
   background: #fff;
-=======
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.btn-wsp {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  right: 40px;
+  line-height: 100px;
+  bottom: 40px;
+  background: #0acf49;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 70px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.icon-whatsapp {
+  margin-top: 13px;
+}
+
+.btn-wsp:hover {
+  text-decoration: none;
+  color: #0df053;
+  background: #fff;
+}
+
 .footer {
   background-color: #222;
   display: flex;
   align-items: center;
   text-align: center;
->>>>>>> FT-footer
 }
 .footer__column {
   padding: 1rem;
@@ -123,4 +222,165 @@ body {
 .main-nav .nav-links .nav-item:hover {
   font-size: 1.2rem;
   color: darkred;
+}
+
+.footer {
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.footer__column {
+  padding: 1rem;
+  margin: auto;
+}
+.footer__logo {
+  width: 100px;
+  border-radius: 50%;
+}
+.footer__company-name {
+  color: white;
+  font-size: 25px;
+}
+.footer__copyrigth {
+  color: white;
+  margin: 10px;
+}
+.footer__contact-item {
+  list-style: none;
+}
+.footer__contact-link {
+  color: white;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.footer__contact-icon {
+  font-size: 1.75rem;
+}
+.footer__contact-icon--facebook {
+  color: #38529a;
+}
+.footer__contact-icon--instagram {
+  color: #f14d59;
+}
+.footer__contact-icon--linkedin {
+  color: #0077b6;
+}
+.footer__contact-icon--twitter {
+  color: rgb(29, 155, 240);
+}
+
+@media screen and (min-width: 600px) {
+  .footer {
+    flex-direction: row;
+  }
+}
+.main {
+  background-color: black;
+  padding: 1.5rem 0;
+  margin-top: 50px;
+}
+
+.contenido {
+  background-image: url(/assets/images/Razer\ portada.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50rem;
+  max-width: 100%;
+  position: relative;
+}
+
+.contenido h1 {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.logo_r {
+  color: white;
+  background-color: white;
+  border-radius: 50%;
+  width: 90px;
+  box-shadow: 0px 0px 20px 0px white;
+}
+
+.contenido::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.608);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+}
+
+.slider {
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+  width: 4400px;
+  max-width: 1000px;
+  min-width: 200px;
+}
+
+.slider .slide {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translatex(0);
+  }
+  100% {
+    transform: translatex(-2200px);
+  }
+}
+.section-cards__category {
+  color: white;
+  padding: 50px;
+  font-size: 3rem;
+}
+
+.cards-container {
+  display: grid;
+  box-shadow: 0 12px 16px rgba 0, 0, 0, 0.2;
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media screen and (min-width: 600px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-cards__header {
+    display: flex;
+  }
+  .section-cards__img {
+    width: 30%;
+  }
+  .cards-container {
+    display: grid;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 6fr));
+  }
 }/*# sourceMappingURL=main.css.map */

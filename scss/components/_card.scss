@@ -1,4 +1,77 @@
-// .card {
-//     padding: 1rem;
-//     border: 1px solid $color-bg-primary;
-// }
+.card {
+    margin: 1rem;
+    border: 1px solid red;
+    background-color: black;
+    box-shadow: 0px 0px 20px 0px white;
+    transition: 1s ease;
+    display: flex;
+    flex-direction: column;
+
+    
+    &__header {
+        height: 120px;
+    }
+     &__img {
+        height: 120px;
+        width: 100%;
+        padding: auto;
+    }
+     &__body {
+        padding: 1rem;
+        margin-top: -1rem;
+        flex-grow: 1;
+
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        border-bottom: 2px solid red;
+        color: white;
+        background-color: black;
+        opacity: .7;
+        padding-bottom: 5px;
+    }
+
+    &__description {
+        padding: 1.5rem 0 2rem;
+        color: white;
+
+    }
+
+    &__price {
+        font-weight: 00;
+        font-size: 1.5rem;
+        color: red;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+    }
+    &__date {
+        color:white;
+        margin: 10px;
+    }
+    &__btn {
+        padding: 1rem 1rem;
+        margin: 5px;
+        background-color:red;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px white;
+        transition: 500ms;
+    }
+    &__btn:hover {
+        background-color:black;
+        color: white;
+        font-size: 20px;
+        
+    }
+  
+
+}
+.card:hover {
+    transform: scale(1.1);
+}
