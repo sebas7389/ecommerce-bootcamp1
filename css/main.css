@@ -15,6 +15,7 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -45,10 +46,65 @@ body {
   text-decoration: none;
   color: #0df053;
   background: #fff;
+=======
+.footer {
+  width: 100%;
+  padding: 50px 0px;
+  background-image: url(../Images/background-footer.svg);
+  background-size: cover;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 100px;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+}
+.footer-container__box {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.footer-container__logo img {
+  width: 180px;
+  background-color: white;
+  border-radius: 50%;
+}
+.footer-container__terms {
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #7a7a7a;
+  font-size: 18px;
+}
+.footer-container__box h2 {
+  margin-bottom: 30px;
+  color: #343434;
+  font-weight: 700;
+}
+.footer-container__box h2--box a {
+  margin-top: 10px;
+  color: white;
+  font-weight: 600;
+}
+.footer-container__box h2--box a:hover {
+  opacity: 0.8;
+}
+.footer-container__box h2--box a .fab {
+  font-size: 20px;
+}
+.footer-container__copyright {
+  text-align: center;
+>>>>>>> FT-footer
 }
 
 .main-nav {
-  background-color: rgb(15, 34, 156);
+  background-color: red;
   color: rgb(255, 255, 255);
   height: 60px;
   display: flex;
