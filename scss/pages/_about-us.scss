@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto", sans-serif;
+}
+
+body{
+    margin: 20px;
+    background-color: black;
+    
+}
+
+
+.capa {
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    background-color: black;
+    
+}
+
+.parrafo {
+    z-index: 1;
+    width: 540px;
+    height: 440px;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 1px 5px 25px;
+    border-radius: 5px;
+
+}
+
+.parrafo img {
+    width: 280px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+}
+
+.title {
+    color: red;
+    text-align: center;
+    text-decoration:underline;
+}

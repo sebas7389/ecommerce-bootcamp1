@@ -3,9 +3,18 @@
 @import "base/reset";
 
 @import "base/typography";
-
 @import "components/card";
 
-@import "layout/header";
+@import "components/whatsapp";
 
+@import "layout/footer";
+@import "layout/header";
+@import "layout/main";
+
+
+
+@import "pages/about-us";
+@import "pages/contact";
 @import "pages/home";
+@import "pages/register";
+
