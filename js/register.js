@@ -12,12 +12,23 @@ registerForm.addEventListener('submit', (event)=> {
     event.preventDefault();
     //b- Tomar los datos y armar el objeto usuario
     const el = event.target.elements;
+    //d- Verificar que los datos ingresados de password y passoword2 son exactamente igual
+    if(el.password.value!== el.password2.value) {
+        console.warn(`El password no coinciden`)
+        return
+    }
+
+    
+    const user = {
+        fullName:el.fullName.value,
+        email:el.email.value,
+        password:el.password.value,
+    }
+    
+    
     
     
     //c- Verificar si hay en el localStorage algun usuario guardado ya con ese email
-    
-    //d- Verificar que los datos ingresados de password y passoword2 son exactamente igual
-    
     
     //e- Guardarlo en el localStorage
     
