@@ -56,7 +56,7 @@
 <!-- =================================Inicio del formulario ============================= -->
 
             <section class="section">
-                <form class="form-register">
+                <form class="form-register" id="registerForm">
                     <!-- ingresos de datos -->
                     <div>
                         <label for="idInputName">Nombre y Apellido</label><br>
@@ -65,19 +65,19 @@
                 
                     <div>
                         <label for="emailInput">E-mail</label> <br>
-                        <input type="email" class="email-field" name="email" id="emailInput" placeholder="example@email.com" required minlength="8" maxlength="45" pattern="[a-z0-      9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <input type="email" class="email-field" name="email" id="emailInput" placeholder="example@email.com" required minlength="8" maxlength="45">
                     </div>
                     <div>
                         <label for="passwordInput">Contraseña</label><br>
-                        <input type="text" pattern=""^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required placeholder="**********" type="password">
+                        <input type="text" required placeholder="**********" type="password" name="password">
                     </div>
                     <div>
                         <label for="passwordInput">Repetir Contraseña</label> <br>
-                        <input type="text" pattern=""^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required placeholder="**********" type="password">
+                        <input type="text" required placeholder="**********" type="password" name="password2">
                     </div>
                     <div>
                         <label for="ageInput">Edad</label> <br>
-                        <input type="number" name="age" id="ageInput" required min="12" max="130" step="5">
+                        <input type="number" name="age" id="ageInput" required min="12" max="130" step=".1">
                     </div>
                     <div>
                         <label for="bornDateInput">Fecha Nacimiento</label><br>
@@ -101,7 +101,7 @@
                             </div>
 
 
-                    <button class="btn" type="submit">Enviar</button>
+                    <button id="registerSubmit" class="btn" type="submit">Enviar</button>
                 </form>
                 </section>
             </main>
@@ -173,6 +173,6 @@
                 </div>
             </footer>
 
-    
+    <script src="/js/register.js"></script>
 </body>
 </html>
