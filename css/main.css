@@ -25,6 +25,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease-in;
+}
 .card__header {
   height: 120px;
 }
@@ -80,16 +84,6 @@ body {
   font-size: 20px;
 }
 
-.card:hover {
-  transform: scale(1.1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 .btn-wsp {
   position: fixed;
   width: 100px;
@@ -102,7 +96,7 @@ body {
   border-radius: 50px;
   text-align: center;
   font-size: 70px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 10px rgb(248, 249, 249);
   z-index: 100;
 }
 
@@ -177,26 +171,27 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
   font-family: "Roboto", sans-serif;
 }
 
 .navbar {
   height: 50px;
+  background-color: black;
   display: flex;
   align-items: center;
   position: relative;
 }
 .navbar__logo {
   height: 45px;
-  color: black;
-  background-color: white;
   border-radius: 50%;
+  box-shadow: 0px 0px 30px 0px white;
 }
 .navbar__menu-label {
   color: rgb(255, 255, 255);
   height: 42px;
   background-color: black;
-  width: 42px;
+  width: 44px;
   margin-right: 4px;
   display: flex;
   align-items: center;
@@ -246,8 +241,8 @@ body {
 .navbar__nav-links-container {
   list-style: none;
   position: absolute;
-  top: 50px;
-  background-color: black;
+  top: 60px;
+  background-color: red;
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -265,6 +260,9 @@ body {
 }
 .navbar__nav-link {
   color: rgb(255, 255, 255);
+}
+.navbar__nav-link:hover {
+  color: red;
 }
 
 .user-navbar {
@@ -291,10 +289,36 @@ body {
     position: static;
     flex-direction: row;
     height: 100% !important;
-    width: auto;
+    background-color: transparent;
+  }
+  .navbar__nav-item {
+    padding: 1.25rem 0.75rem;
+  }
+  .navbar__nav-item:not(:last-child) {
+    border-bottom: none;
+  }
+  .navbar__nav-item:hover {
+    background: linear-gradient(180deg, black 0%, rgb(64, 64, 64) 100%);
+    transition: background 0.5s ease-in-out;
+  }
+  .navbar__nav-link:not(:has(img)) {
+    padding: 0.25rem 1rem;
+    border-left: 0.2rem solid gray;
+    border-right: 0.2rem solid gray;
+    border-bottom: transparent;
+  }
+  .navbar__nav-link:not(:has(img)):hover {
+    color: red;
+    transition: border 0.5s ease;
+    border-left: 0.2rem solid red;
+    border-right: 0.2rem solid red;
   }
   .user-navbar {
     order: 3;
+  }
+  .user-navbar__cart-icon-container:hover {
+    transition: color 0.5s ease;
+    color: red;
   }
 }
 .main {
@@ -308,9 +332,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 50rem;
-  max-width: 100%;
-  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .contenido h1 {
@@ -326,7 +349,7 @@ body {
   background-color: white;
   border-radius: 50%;
   width: 90px;
-  box-shadow: 0px 0px 20px 0px white;
+  box-shadow: 0px 0px 30px 0px white;
 }
 
 .contenido::before {
@@ -368,34 +391,29 @@ body {
     transform: translatex(-2200px);
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "roboto", sans-serif;
-}
-
-body {
-  margin: 20px;
-  background-color: black;
+.main-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .capa {
   width: 100%;
   height: 150%;
-  position: absolute;
   background-color: black;
+  color: white;
+  padding: 8.5rem;
 }
 
 .parrafo {
   z-index: 1;
-  width: 540px;
+  width: auto;
   height: 440px;
   padding: 20px;
   font-size: 15px;
   line-height: 1.5;
-  box-shadow: 1px 5px 25px;
-  border-radius: 5px;
+  border: solid red;
+  box-shadow: 0px 0px 20px 0px white;
 }
 
 .parrafo img {
@@ -411,23 +429,19 @@ body {
   text-decoration: underline;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@media only screen and (min-width: 600px) {
+  /* para desktop */
+  .capa {
+    width: 100%;
+  }
 }
-
-body {
-  background-color: #181818;
-  color: #fff;
-  font-family: "roboto", sans-serif;
-  padding: 0 1.5rem;
+.main.contact {
+  background-color: black;
 }
 
 .content {
-  max-width: 1170px;
-  margin: auto;
-  padding: 1.5rem;
+  width: 100%;
+  padding: 6.5rem;
 }
 
 .logo1 {
@@ -437,6 +451,7 @@ body {
 
 .contact-w {
   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+  padding: 1rem;
 }
 
 .contact-w > * {
@@ -445,6 +460,9 @@ body {
 
 .contact-form {
   background-color: #222222;
+  color: white;
+  border: solid red;
+  box-shadow: 0px 0px 20px 0px white;
 }
 
 .contact-form form {
@@ -488,6 +506,9 @@ body {
 
 .contact-info {
   background-color: #000;
+  color: white;
+  border: solid red;
+  box-shadow: 0px 0px 20px 0px white;
 }
 
 .info {
@@ -503,9 +524,6 @@ body {
 }
 
 @media (min-width: 700px) {
-  body {
-    padding: 0 4rem;
-  }
   .contact-w {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -558,23 +576,16 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(250px, 6fr));
   }
 }
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.main-formulary {
+  background-color: rgba(0, 0, 0, 0.851);
+  padding: 30px;
 }
 
-body {
-  font-family: "Roboto";
-  font-size: 1rem;
-}
-
-/* =====================================Inicio del formulario============================== */
 .title {
   color: red;
   text-align: center;
-  padding: 20px;
-  margin-top: 25px;
+  padding: 5px;
+  margin-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
@@ -589,7 +600,7 @@ body {
 .form-register {
   width: 350px;
   background: #222222;
-  padding: 30px;
+  padding: 40px;
   margin-top: 20px;
   color: white;
   box-shadow: 0px 5px 20px 7px white;

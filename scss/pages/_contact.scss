@@ -1,19 +1,12 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.main.contact{
     
-    }
-    body{
-        background-color: #181818;
-        color: #fff;
-        font-family: 'roboto', sans-serif;
-        padding: 0 1.5rem;
-    }
-    .content {
-        max-width: 1170px;
-        margin: auto;
-        padding: 1.5rem;
+    background-color: black;
+}
+
+
+.content {
+        width: 100%;
+        padding: 6.5rem;
     }
     
     .logo1 {
@@ -23,6 +16,7 @@
     .contact-w {
     
         box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+        padding: 1rem;
     
     }
     .contact-w >* {
@@ -30,6 +24,9 @@
     }
     .contact-form{
         background-color: #222222;
+        color: white;
+        border: solid red;
+    box-shadow: 0px 0px 20px 0px white;
     }
     
     .contact-form form {
@@ -74,6 +71,10 @@
     
     .contact-info {
         background-color: #000;
+        color: white;
+        border: solid red;
+        box-shadow: 0px 0px 20px 0px white;
+        
     }
     .info{
         font-family: 'roboto', sans-serif;
@@ -90,10 +91,6 @@
     
     
     @media (min-width: 700px){
-    
-        body {
-            padding: 0 4rem;
-        }
         .contact-w{
             display: grid;
             grid-template-columns: 2fr 1fr;

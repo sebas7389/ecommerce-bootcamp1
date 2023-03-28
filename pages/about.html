@@ -8,39 +8,48 @@
     <title>Home - Ecommerce</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
+</head>
 
 <body>
-    <header>
+    <header class="header">
         <nav class="navbar">
             <a href="/index.html" class="navbar__nav-link">
-                <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce" width="50">
+                <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
             </a>
+            <div class="user-navbar">
+                <div class="user-navbar__cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="user-navbar__user-avatar-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                </div>
+                <!-- TODO: avatar de la persona logueada o nombre -->
+            </div>
+            
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+
+            <label for="menu-btn" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+
             <ul class="navbar__nav-links-container">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/contact.html" class="navbar__nav-link">Contacto</a>
+                    <a href="/pages/contact.html" class="navbar__nav-link">Contacto</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/about.html" class="navbar__nav-link">Nosotros</a>
+                    <a href="/pages/about.html" class="navbar__nav-link">Nosotros</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/register.html" class="navbar__nav-link">Registrarse</a>
+                    <a href="/pages/register.html" class="navbar__nav-link">Registro</a>
                 </li>
             </ul>
         </nav>
-        <<div class="user-navbar">
-            <div class="user-navbar__cart-icon-container">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-            <div class="user-navbar__user-avatar-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
-            </div>
-            <!-- TODO: avatar de la persona logueada o nombre -->
-        </div>
+        
     </header>
-
+    <main class="main-about">
         <div class="capa">           
             <div class="parrafo">
                 <img src="/assets/images/logo R.jpg" alt="">
@@ -58,7 +67,8 @@
                 </p>
             </div>
         </div>
-
+    </main>
+    
     <footer class="footer">
         <div class="footer__column">
             <ul class="footer__contact-container">

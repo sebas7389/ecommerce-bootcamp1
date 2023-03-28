@@ -6,6 +6,8 @@
     transition: 1s ease;
     display: flex;
     flex-direction: column;
+    &:hover{transform: scale(1.03);
+        transition: .3s ease-in;}
 
     
     &__header {
@@ -72,7 +74,4 @@
     }
   
 
-}
-.card:hover {
-    transform: scale(1.1);
 }
