@@ -59,37 +59,42 @@
                 <form class="form-register" id="registerForm">
                     <!-- ingresos de datos -->
                     <div>
-                        <label for="idInputName">Nombre y Apellido</label><br>
-                        <input type="text" name="fullName" id="idInputName" required minlength="8" maxlength="40" size="50" autofocus autocomplete="on">
+                        <label for="name">Nombre</label><br>
+                        <input type="text" name="name"  id="Name" required minlength="4" maxlength="40" size="50" autofocus autocomplete="on">
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido</label><br>
+                        <input type="text" name="apellido"  id="apellido"  minlength="4" maxlength="40" size="50" autofocus autocomplete="on" required>
                     </div>
                 
                     <div>
                         <label for="emailInput">E-mail</label> <br>
-                        <input type="email" class="email-field" name="email" id="emailInput" placeholder="example@email.com" required minlength="8" maxlength="45">
+                        <input type="email" name="email" id="email" value="seba@gmail.com" placeholder="example@email.com" minlength="8" maxlength="45" required>
                     </div>
                     <div>
                         <label for="passwordInput">Contraseña</label><br>
-                        <input type="text" required placeholder="**********" type="password" name="password1">
+                        <input type="password" id="password"  placeholder="**********"  name="password" value="asd" required>
                     </div>
                     <div>
                         <label for="passwordInput">Repetir Contraseña</label> <br>
-                        <input type="text" required placeholder="**********" type="password" name="password2">
+                        <input type="password" id="password2"  placeholder="**********"  name="password2" value="asd" required>
                     </div>
                     <div>
                         <label for="ageInput">Edad</label> <br>
-                        <input type="number" name="age" id="ageInput" required min="12" max="130" step=".1">
+                        <input type="number" step=".1" id="age" name="age"  min="12" max="130"required>
                     </div>
                     <div>
-                        <label for="bornDateInput">Fecha Nacimiento</label><br>
+                        <label for="bornDateInput">Fecha Nacimiento</label>
                         <input type="date" name="bornDate" id="bornDateInput">
                     </div>
-                    <div>
+                    <div><br>
+                        
                         <label class="formulary-container__genre" for="">Sexo</label>
                             
                             <div class="formulary__genre-div">
-                            <input type="radio" name="genre" value="female"> Mujer 
-                            <input type="radio" name="genre" value="male"> Hombre 
-                            <input type="radio" name="genre" value="other"> Otro 
+                            <input type="radio" name="gender" id="female" value="female"> Mujer 
+                            <input type="radio" name="gender" id="male" value="male"> Hombre 
+                            <input type="radio" name="gender" id="other" value="other"> Otro 
                             </div>
 
                             <div class="formulary-conditions__container">
@@ -99,7 +104,6 @@
                                 Acepto los terminos y condiciones
                                 </label>
                             </div>
-
 
                     <button id="registerSubmit" class="btn" type="submit">Enviar</button>
                 </form>
@@ -172,10 +176,10 @@
                     </ul>
                 </div>
             </footer>
-            <div class="alert-dialog">
-                Se agrego usuario correctamente
-            </div>
 
     <script src="/js/register.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/alert.js"></script>
+    <script src="/js/header.js"></script>
 </body>
 </html>

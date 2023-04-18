@@ -3,33 +3,38 @@ const loginForm = document.getElementById('loginForm');
 
 //1- Obtener los datos del formulario
 loginForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.dir (loginForm);
+    event.preventDefault ();
+    console.dir(loginForm);
 
     const {email, password} =loginForm.elements;
 
-    console,log ( email, password)
-    
+
     //2- Chequear los datos ingresadps con los usarios que tengo
     //2a- Obtener los usuarios almacenados
-const users = JSON.parse(localStorage.getItem('users'))||[];
+    const users = JSON.parse(localStorage.getItem('users'))||[];
 
-const user = users.find(usr) => {
-if(usr.email ===email.value) {
-    return true;
-}
-return false;
-})//{name, password, email, }
+    const user = users.find((usr) => {
+       if(usr.email === email.value) {
+                return true;
+            }
+            return false;
+    }) //{name, password, email, }
+    
+    // Se pone ! cuando no existe, si user no existe o si user.password es distinto del password alertar que hay un error y hacer un return.
+    if(!user||user.password !== password.value) {
+        showAlert('Login incorrecto', 'error');
+        return;
+        }
+        // Otra forma seria poner un else cuando los datos no son iguales y repetir
 
-if(!user) {
-    alert('Los datos ingresados no son correctos');
-}
-
-if(user.password === password.value) {
+    
     localStorage.setItem('currentUser' , JSON.stringify(user));
-    alert('Login correcto')
-}
-
+    //TODO: Insertar alerta custom
+    showAlert('Login correcto te redireccionaremos en unos instantes...')
+    
+    setTimeout(()=> {
+        window.location.href = '/index.html';
+    },1500)
 });
     //a- Email que me ingreso, lo tiene algun usuario de mi array
     //b- password deberian ser las mismas
