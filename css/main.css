@@ -636,24 +636,24 @@ input, textarea, select {
     margin-left: 15px;
   }
 }
-.product-container {
+.productos-container {
   display: flex;
   flex-direction: column;
 }
-.product-container_product-form {
+.productos-container_form {
   padding: 2rem;
   border: 3px solid salmon;
 }
-.product-container_product-form > div {
+.productos-container_form > div {
   margin-bottom: 1rem;
 }
-.product-container_product-submit-btn {
+.productos-container_submit-btn {
   padding: 0.5rem 1rem;
   border: 1px solid greenyellow;
   color: white;
   background-color: green;
 }
-.product-container_product-edit-btn {
+.productos-container_edit-btn {
   background-color: dodgerblue;
   border-color: skyblue;
 }
@@ -662,30 +662,24 @@ input, textarea, select {
   width: 100vw;
   overflow-x: scroll;
 }
-
-.table-product {
+.table-container_table-product {
   border-collapse: collapse;
 }
-
-.table-product thead tr {
+.table-container_table-product thead tr {
   background-color: dodgerblue;
   color: white;
 }
-
-.table-product th, .table-product td {
+.table-container_table-product th, .table-container .table-product td {
   border: 1px solid skyblue;
   font-size: 0.75rem;
 }
-
-.table-product tr td:not(:first-child) {
+.table-container_table-product tr td:not(:first-child) {
   padding: 0.5rem;
 }
-
-.table-product tbody tr:nth-child(odd) {
+.table-container_table-product tbody tr:nth-child(odd) {
   background-color: rgb(236, 250, 255);
 }
-
-.table-product tr th {
+.table-container_table-product tr th {
   padding: 0.5rem;
 }
 
@@ -794,4 +788,4 @@ input, textarea, select {
 
 .swal-modal {
     background-color: #333;
-}  *//*# sourceMappingURL=main.css.map */
+}  */
