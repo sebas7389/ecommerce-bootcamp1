@@ -22,8 +22,33 @@
             </a>
             <div class="user-navbar">
                 <div class="user-navbar__cart-icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-cart-shopping container-cart-icon"></i>
                 </div>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">MONITOR 24" ASUS VG24VQ CURVO GAMING 144HZ AUDIO</p>
+                                <span class="precio-producto-carrito">$131784</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg> 
+                        </div>
+
+                    </div>
+                    <div class="cart-total">
+                        <h3>Total</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+        
+        
+                </div>
+                    
                 <div class="user-navbar__user-avatar-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
                 </div>
@@ -52,7 +77,7 @@
                 </li>
             </ul>
         </nav>
-        
+
     </header>
     
     <main class="main">
@@ -150,9 +175,9 @@
                                     10/03/2023
                                 </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
+                                    <button class="card__btn" onclick="btnComprar()" >
                                         Comprar
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </article>             
@@ -565,6 +590,8 @@
             </ul>
         </div>
     </footer>
+
+   <script src="/js/index.js"></script>
    
 </body>
 
