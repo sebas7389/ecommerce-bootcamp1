@@ -12,6 +12,9 @@
 </head>
 
 <body>
+
+    <!-- Header!! -->
+
     <header class="header">
         <nav class="navbar">
             <a href="/index.html" class="navbar__nav-link">
@@ -39,66 +42,86 @@
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/contact.html" class="navbar__nav-link">Contacto</a>
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/about.html" class="navbar__nav-link">Nosotros</a>
+                    <a href="/pages/about-us/about.html" class="navbar__nav-link">Nosotros</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/register.html" class="navbar__nav-link">Registro</a>
+                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
                 </li>
             </ul>
         </nav>
         
     </header>
+    
     <main class="main">
-        <div class="contenido">
-            <h1>Tu pc gamer
-                <img src="/assets/images/logo R.jpg" alt="" class="logo_r">
-            </h1>
-        </div>
-            
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide">
-                    <img src="/assets/images/asus logo.jpg" height="100" width="200" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/dell logo.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/amd logo.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/corsair-256 logo.jpg" height="100" width="200" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/hp logo.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/intel logo.jpg" height="100" width="150" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/lenovo logo.jpg" height="100" width="150" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/msi logo.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/nVIDIA logo.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/razer logo.jpg" height="100" width="200" alt="">
-                </div>
-                <div class="slide">
-                    <img src="/assets/images/Steelseries-logo.jpg" height="100" width="200" alt="">
-                </div>
+    <!-- TODO: Carousel !  -->
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="/assets/images/asus logo.jpg" height="100" width="200" alt="">
             </div>
-        </div><br>
-        
-    <!-- TODO: Implementar carousel en 2do módulo -->
-        <div>
-            <section class="section-cards">
+            <div class="slide">
+                <img src="/assets/images/dell logo.jpg" height="100" width="100" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/amd logo.jpg" height="100" width="100" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/corsair-256 logo.jpg" height="100" width="200" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/hp logo.jpg" height="100" width="100" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/intel logo.jpg" height="100" width="150" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/lenovo logo.jpg" height="100" width="150" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/msi logo.jpg" height="100" width="100" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/nVIDIA logo.jpg" height="100" width="100" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/razer logo.jpg" height="100" width="200" alt="">
+            </div>
+            <div class="slide">
+                <img src="/assets/images/Steelseries-logo.jpg" height="100" width="200" alt="">
+            </div>
+        </div>
+    </div><br>
+
+    <!-- Main! -->
+
+        <section class="section-cards">
+            <header class="section-cards__header">
+                <div class="section-cards__title-container">
+                    <h1 class="section-cards-title">
+                        <img src="/assets/images/asusbanner.webp" alt="" class="contenido">
+                        <img src="/assets/images/logo R.jpg" alt="" class="logo_r"><br>
+                        Tu pc gamer
+                     <h1>
+                        <p class="section-cards__subtitle">
+                           Lo mejor en tecnologia lo podes encontrar en Rsystem
+                        </p>
+                 </div> 
+        <div class="section-cards__products-search-conteiner">
+                    <div class="product-search">
+                        <!-- <label for="" class="product-search__label">Buscar</label> -->
+                        <input type="Text" placeholder="Buscar" class="product-search__input">
+                        <button class="product-search__btn">Buscar</button><br>
+                    </div><br>
+
+                    <div class="section-cards__products-count">
+                        Se encontraron X Productos
+                    </div>
+                </div>
+            </header>
+
                     <h1 class="section-cards__category">
                         CATEGORÍA: OFERTAS
                     </h1> 
@@ -113,7 +136,10 @@
                                     MONITOR 24" ASUS VG24VQ CURVO GAMING 144HZ AUDIO
                                 </div>
                                 <p class="card__description">
-                                    Monitor Curvo Gamer TUF Gaming VG24VQ: 23.6 pulgadas Full HD (1920 x 1080), 144Hz, Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT), Shadow Boost. Monitor de juegos 1500R Full HD (1920 x 1080) de 23.6 pulgadas con frecuencia de actualización ultra rápida de 144Hz diseñada para jugadores profesionales y un juego inmersivo
+                                    - Monitor Curvo Gamer TUF Gaming VG24VQ <br>
+                                    - 23.6 pulgadas Full HD (1920 x 1080), 144Hz<br>
+                                    - Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT)<br>
+                                    - Monitor de juegos 1500R Full HD de 23.6 pulgadas<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$131.784,00</b>
@@ -139,16 +165,10 @@
                                     AURICULARES CORSAIR GAMING HS35 GREEN
                                 </div>
                                 <p class="card__description">
-                                    Producto de audio: auriculares Micrófono Desmontable Sí
-                                    Respuesta de frecuencia de auriculares: 20Hz - 20 kHz
-                                    Sensibilidad de auriculares: 113dB (+/- 3dB)
-                                    Impedancia: 32 ohmios a 1 kHz
-                                    Tipo de auriculares: con cable
-                                    Conector de auriculares: analógico de 3.5 mm
-                                    Controladores de auriculares: 50 mm
-                                    Longitud del cable: 1.1m
-                                    Modelo: HS35
-                                    Plataforma: PC, PS4, XBOX One, Nintendo Switch, disposit
+                                    - Producto de audio: auriculares Micrófono Desmontable Sí<br>
+                                    - Respuesta de frecuencia de auriculares: 20Hz - 20 kHz<br>
+                                    - Sensibilidad de auriculares: 113dB (+/- 3dB)<br>
+                                    - Impedancia: 32 ohmios a 1 kHz<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$13.738,00</b>
@@ -175,38 +195,10 @@
                                     Memoria GeiL DDR4 16GB 3000MHz Super Luce RGB Black
                                 </div>
                                 <p class="card__description">
-                                    Capacidad
-                                    16 gb
-                                    Velocidad
-                                    3000 mhz
-                                    Tipo
-                                    DDR4
-                                    Cantidad De Memorias
-                                    1
-                                    Latencia
-                                    16 cl
-                                    Voltaje
-                                    1.35 v
-                                    Aplicación: Computadoras de escritorio
-                                    Marca: Geil
-                                    Latencia CAS: 16
-                                    Color: Black
-                                    Modelo detallado: GALS48GB3000C16ASC
-                                    Código universal de producto: 841517004941
-                                    Capacidad individual: 8 GB
-                                    Es gamer: Sí
-                                    Condición del ítem: Nuevo
-                                    Color de la luz: RGB
-                                    Línea: Super Luce RGB Sync
-                                    Fabricante: Geil
-                                    Formato: UDIMM
-                                    Módulos de memoria: 1 x 8 GB
-                                    Tecnología de la memoria: DDR4
-                                    Modelo: GALS48GB3000C16ASC
-                                    Velocidad: 3000 MHz
-                                    Voltaje de alimentación: 1.35V
-                                    Capacidad total: 8 GB
-                                    SKU: 841517004941
+                                    - Capacidad 16 gb Velocidad 3000 mhz<br>
+                                    - Tipo DDR4 Cantidad De Memorias 1<br>
+                                    - Latencia 16 cl Voltaje 1.35 v<br>
+                                    - Aplicación: Computadoras de escritorio<br>                             
                                 </p>
                                 <div class="card__price">
                                     <b>$29.899</b>
@@ -233,44 +225,10 @@
                                     Fuente ASUS ROG THOR 850W 80 Plus Platinum 850P Full modular
                                 </div>
                                 <p class="card__description">
-                                    Watts Nominal
-                                    850 w
-                                    Watts Reales
-                                    852 w
-                                    Formato
-                                    ATX
-                                    Compatible Con Posición Inferior
-                                    Si
-                                    Certificacion 80 Plus
-                                    80 PLUS Platinum
-                                    Modo Híbrido
-                                    Si
-                                    Tipo De Cableado
-                                    Full Modular
-                                    Ampers En Linea +12V
-                                    71 a
-                                    Fuente Digital
-                                    Si
-                                    Color
-                                    Negro
-                                    Iluminación
-                                    RGB
-                                    CABLEADO
-                                    Conector Cpu 4 Pines
-                                    2
-                                    Conector Cpu 4Pines Plus
-                                    2
-                                    Conector 24 Pines
-                                    Si
-                                    Conector Pcie 6 Pines
-                                    4
-                                    Conector Pcie 2 Pines Plus
-                                    4
-                                    Conexiones Sata
-                                    12
-                                    Conexiones Molex
-                                    5
-                                    
+                                    - Watts Nominal 850 w<br> 
+                                    - Watts Reales 852 w<br>
+                                    - Formato ATX<br>
+                                    - Compatible Con Posición Inferior Si<br>     
                                 </p>
                                 <div class="card__price">
                                     <b>$77.250</b>
@@ -297,31 +255,10 @@
                                     Cooler CPU ID-Cooling SE-902-SD V2
                                 </div>
                                 <p class="card__description">
-                                    CARACTERISTICAS GENERALES
-                                    Consumo
-                                    5 w
-                                    Tdp
-                                    100 w
-                                    Tipo De Disipasión
-                                    Aire
-                                    DIMENSIONES
-                                    Altura
-                                    123 mm
-                                    COMPATIBILIDAD
-                                    Socket Compatibles
-                                    1200,1200 Comet Lake,
-                                    1200 Rocket Lake-S,1151,1151 Coffe Lake,1151 Kaby Lake,1155,1156,AM4,
-                                    FM2+,FM2,FM1,
-                                    AM3,AM2,AM2+
-                                    COOLERS Y DISIPADORES
-                                    Coolers Fans Incluidos
-                                    1
-                                    Tamaño De Los Coolers
-                                    92 mm
-                                    Tipo De Iluminación
-                                    Sin iluminación
-                                    Nivel De Ruido Máxima
-                                    23.1 dba
+                                    - CARACTERISTICAS GENERALES Consumo 5 w Tdp 100 w<br>
+                                    - Tipo De Disipasión: Aire<br>
+                                    - DIMENSIONES  Altura 123 mm<br>
+                                    - COMPATIBILIDAD: Socket Compatibles 1200,1200 Comet Lake<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$4.790</b>
@@ -348,19 +285,11 @@
                                     Silla Gamer Level Up Ares Negra y Roja 
                                 </div>
                                 <p class="card__description">
-                                    Caracterísiticas:
-                                     Respaldo reclinable en multiples ángulos (90º / 130º / 170º)
-                                     Marco de acero con diseño ergonómico.
-                                     Soporta hasta 90kg.
-                                     Almohadillas apoya cervical y lumbar.
-                                     Apoyabrazos confortable.
-                                     Sistema regulable en altura.
-                                     Material cuero sintético.
-                                     Incluye: 2 x almohadones removibles (cervical y lumbar)
-                                    
-                                    Apoyacabezas regulables en altura y giratorio. Almohadillas apoya cervical y lumbar.
-                                    Respaldo reclinable.
-                                   
+                                    - Caracterísiticas:<br>
+                                    - Respaldo reclinable en multiples ángulos (90º / 130º / 170º)<br>
+                                    - Marco de acero con diseño ergonómico.<br>
+                                    - Soporta hasta 90kg.<br>
+                                    - Almohadillas apoya cervical y lumbar.<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$64.860</b>
@@ -387,7 +316,10 @@
                                     GEFORCE RTX SERIE 30
                                 </div>
                                 <p class="card__description">
-                                    VIDIA Reflex ofrece la mejor ventaja competitiva. La latencia más baja. La mejor capacidad de reacción. Todo esto impulsado por las GPUs GeForce RTX Serie 30 y los monitores NVIDIA® G-SYNC®. Apunta a los objetivos más rápido, reacciona con más velocidad y aumenta la precisión de la mira mediante un revolucionario conjunto de tecnologías diseñadas para medir y optimizar la latencia del sistema en los juegos competitivos.la latencia del sistema en los juegos
+                                    - VIDIA Reflex ofrece la mejor ventaja competitiva<br>
+                                    - La mejor capacidad de reacción.<br>
+                                    - Todo esto impulsado por las GPUs GeForce RTX Serie 30 y los monitores NVIDIA® G-SYNC®<br>
+                                    - Apunta a los objetivos más rápido<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$116.530,00</b>
@@ -414,7 +346,10 @@
                                     Procesador Intel Core I9
                                 </div>
                                 <p class="card__description">
-                                    Productividad y entretenimiento, todo disponible en tu computadora de escritorio. La superioridad tecnológica de INTEL es un beneficio para todo tipo de profesionales. Asegura el mejor rendimiento de las aplicaciones, de la transferencia de datos y la conexión con otros elementos tecnológicos. Núcleos: el corazón del procesador son los encargados de ejecutar las instrucciones y actividades que le asignás a tu dispositivo.
+                                    - Productividad y entretenimiento<br>
+                                    - La superioridad tecnológica de INTEL es un beneficio para todo tipo de profesionales<br>
+                                    - Asegura el mejor rendimiento de las aplicaciones, de la transferencia de datos y la conexión<br>
+                                    - Procesador ultra rapido<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$120.530,00</b>
@@ -441,7 +376,10 @@
                                     Mother Asus Rog Strix Z490-E
                                 </div>
                                 <p class="card__description">
-                                    Las tarjetas madre de la serie Rog Strix Z490-E Gaming ofrecen buena parte de las características que puedes encontrar en la serie de gama alta ROG Strix X570 Gaming, como por ejemplo PCIe® 4.0. Con un suministro de energía potente y una refrigeración eficaz, la serie Rog Strix Z490-E Gaming está optimizada para las CPU AMD Ryzen™ de 3.ª Gen. Con una estética futurista y el intuitivo software ROG. Es la plataforma ideal para montar el equipo de tus sueños.
+                                    - Las tarjetas madre de la serie Rog Strix Z490-E Gaming<br>
+                                    - ofrecen buena parte de las características en la serie de gama alta ROG Strix X570 Gaming<br>
+                                    - Suministro de energía potente y una refrigeración eficaz <br>
+                                    - la serie Rog Strix Z490-E Gaming está optimizada para las CPU AMD Ryzen™ de 3.ª<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$150.240,00</b>
@@ -468,7 +406,10 @@
                                     IRIS MO-IRS-WDOHBK-01
                                 </div>
                                 <p class="card__description">
-                                    El IRIS Optical RGB Gaming Mouse viene con 16,8 millones de colores RGB reales en dos zonas y cuenta con 9 efectos de iluminación dinámicos con iluminación de aura lateral única para una atmósfera de juego mejorada. El uso de un sensor óptico de grado de juego PMW-3325 con hasta 5000 DPI proporciona precisión superior y juego de precisión y está equipado con interruptores de grado de juego duraderos con una vida útil
+                                    - El IRIS Optical RGB Gaming Mouse viene con 16,8 millones de colores RGB<br>
+                                    - Cuenta con 9 efectos de iluminación dinámicos con iluminación de aura lateral<br>
+                                    - única para una atmósfera de juego mejorada.<br>
+                                    - El uso de un sensor óptico de grado de juego PMW-3325 con hasta 5000 DPI<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$40.000,00</b>
@@ -494,7 +435,10 @@
                                     Procesador gamer AMD Ryzen 3
                                 </div>
                                 <p class="card__description">
-                                    Procesador gamer AMD Ryzen 3 3200G YD3200C5FHBOX de 4 núcleos y  4GHz de frecuencia con gráfica integrada Nuevo  |  +5mil vendidos Procesador gamer AMD Ryzen 3. Núcleos: el corazón del procesador. En este producto, encontrarás los núcleos, que son los encargados de ejecutar las instrucciones y actividades que le asignás a tu dispositivo. Estos tienen relación directa con dos elementos: los hilos y el modelo.
+                                    - Procesador gamer AMD Ryzen 3 3200G YD3200C5FHBOX de 4 núcleos<br>
+                                    - 4GHz de frecuencia con gráfica integrada Nuevo<br>
+                                    - Procesador gamer AMD Ryzen 3. Núcleos: el corazón del procesador. <br>
+                                    - Son los encargados de asignar a tu dispositivo.<br>
                                 </p>
                                 <div class="card__price">
                                     <b>$160.000,00</b>
@@ -520,7 +464,9 @@
                                     Teclado gamer Razer Huntsman V2 Analog QWERTY
                                 </div>
                                 <p class="card__description">
-                                    El nuevo teclado Huntsman V2 Analog de Razer llega con una característica bastante interesante, cuenta con uos nuevos switches óptico-analógicosde con la capacidad de ajustar la distancia de actuación, ofrece un mejor control.El Razer Huntsman V2 Analog, es un teclado que cuenta con unos nuevos switches óptico-analógicos, nos ofrecen la posibilidad de cambiar y ajustar la pulsación de cada tecla.
+                                    - El nuevo teclado Huntsman V2 Analog de Razer<br>
+                                    - Característica bastante interesante, cuenta con uos nuevos switches óptico-analógicosde<br>
+                                    - Ofrece un mejor control.El Razer Huntsman V2 Analog<br> 
                                 </p>
                                 <div class="card__price">
                                     <b>$75.300,00</b>
@@ -540,13 +486,17 @@
                     
                     </div>
                         
+            </section>
     </main>
 
     <!-- icono de whatsapp -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="btn-wsp" target="_blank">
     <i class="fa fa-whatsapp icon-whatsapp"></i>
     </a>
+
+<!-- footer! -->
 
     <footer class="footer">
         <div class="footer__column">

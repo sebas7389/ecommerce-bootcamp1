@@ -1,31 +1,27 @@
-
 .main {
-    background-color:black;
-    padding: 1.5rem 0;
+    flex-grow: 1;
     margin-top: 50px;
+    padding: 1.5rem 0;
+    background-color: black;
+    color:white;
 }
+
 
 .contenido {
     background-image: url(/assets/images/Razer\ portada.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
-    height: 50rem;
-    max-width: 100%;
+    max-width: 1200px;
+    min-width: 320px;
     position: relative;
-}
-
-.contenido h1 {
-    color: white;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 5rem;
-    text-transform:uppercase;
+    display: flex;
+    margin: auto;
 }
 
 .logo_r {
     color: white;
-    background-color: white;
+    background-color: red;
     border-radius: 50%;
     width: 90px;
     box-shadow: 0px 0px 20px 0px white;

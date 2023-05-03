@@ -1,10 +1,8 @@
 .footer {
-    background-color: black;
+    background-color: rgba(60, 60, 60, 0.198);
     display: flex;
     align-items: center;
     text-align: center;
-    border: solid red;
-    box-shadow: 0px 0px 20px 0px white;
     
     &__column {
         padding: 1rem;
@@ -60,10 +58,20 @@
     }
 
 }
-
-@media screen and (min-width: 600px) {
-    .footer {
+@media screen and (min-width: 600px){
+    .footer{
         flex-direction: row;
+        justify-content:space-around;
+        
+        &__column{
+            &:nth-child(2){  
+                border-top: none;
+                border-bottom: none;          
+                border-left: 0.01rem solid white;
+                border-right: 0.01rem solid white;
+                padding: 0 3rem;
+            }
+        }
     }
 }
 

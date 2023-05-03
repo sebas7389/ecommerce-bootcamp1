@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://kit.fontawesome.com/5eb6d4163c.js" crossorigin="anonymous"></script>
+    <title>Home - Ecommerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
-</head>
 
 <body>
-    <header class="header">
+      <!-- Header!! -->
+
+      <header class="header">
         <nav class="navbar">
             <a href="/index.html" class="navbar__nav-link">
                 <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
@@ -41,70 +39,39 @@
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/contact.html" class="navbar__nav-link">Contacto</a>
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/about.html" class="navbar__nav-link">Nosotros</a>
+                    <a href="/pages/about-us/about.html" class="navbar__nav-link">Nosotros</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/register.html" class="navbar__nav-link">Registro</a>
+                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
                 </li>
             </ul>
         </nav>
         
     </header>
-    <main>
-
-        <div class="content">
-            <h1 class="logo1">Contactanos</h1>
-        </div>
-        <div class="contact-w">
-            <div class="contact-form">
-                <h3>Datos:</h3>
-                <form action="">
-                    <p>
-                        <label for="fullname">Nombre y Apellido</label>
-                        <input type="text" name="full
-                         id
-                         fullname" required minlength="8" maxlength="40" size="50" autofocus autocomplete="off">
-                    </p>
-                    <p>
-                        <label>Correo Electronico</label>
-                        <input type="email" name="email" placeholder="example@email.com" required minlength="8"
-                            maxlength="45" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                    </p>
-
-                    <p class="block">
-                        <label>Consulta</label>
-                        <textarea name="mesj" rows="3"></textarea>
-                    </p>
-                    <p class="block">
-                        <button type="submit">
-                            Enviar
-                        </button>
-                    </p>
-                </form>
+<main class="mainContainer">
+    <div class="mainContainer__container">
+        <div class="mainContainer__parrafo">
+            <img src="/assets/images/logo R.jpg" alt="" class="mainContainer__img">
+                <h1 class="mainContainer__title">
+                    Acerca de nosotros </h1>
+                    <p class="mainContainer__title1">
+                        Rsystem es una tienda con más 17 años dentro del rubro tecnológico en Argentina. Nos dedicamos a la venta de computadoras, notebooks, hardware y productos periféricos para consumidores particulares, empresas o revendedores.
+                        Marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, HP, Epson, Samsung y Western Digital nos han hecho sus representantes oficiales en el país.En Rsystem encontrarás todo lo que compone la PC de tus sueños.Todos nuestros vendedores se encuentran altamente capacitados para asesorarlo y ofrecerle exactamente lo que necesita.  
+                        
+                    </p>  
             </div>
-            <div class="contact-info">
+        </div>                 
+</main>
+      <!-- icono de whatsapp -->
 
-                <h4 class="info">Visitanos!</h4>
-                <iframe class="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.891161447227!2d-59.031467133169286!3d-34.09792854920617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0b6a2b7336d5%3A0x6816d842918d833b!2sPueyrred%C3%B3n%2024%2C%20B2800DLB%20Z%C3%A1rate%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1675797572681!5m2!1ses!2sar"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-location-dot"> Pueyrredon 24, Zarate. Bs As</i>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icon-whatsapp"></i>
+      </a>
 
-                    </li><br>
-                    <li>
-                        <i class="fa-solid fa-phone"> +541154580294 </i>
-                    </li><br>
-                    <li>
-                        <i class="fa-solid fa-square-envelope"> Rsystem@gmail.com</i>
-                    </li>
-                </ul>
-    </main>
     <footer class="footer">
         <div class="footer__column">
             <ul class="footer__contact-container">
