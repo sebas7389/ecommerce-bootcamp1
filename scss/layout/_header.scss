@@ -6,19 +6,19 @@
 }
 .navbar {
     height: 60px;
-    $color-dark-gray: #222;
+    background-color:rgb(196, 30, 15);
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    border-bottom: solid 3px red;
+    border-bottom: solid 4px red;
 
     &__logo {
         height:45px;
         margin: 5px;
         color: black;
         padding: 3px;
-        background-color: white;
+        background-color: red;
         border-radius: 50%;
         flex: 2;
     }
@@ -27,7 +27,7 @@
         color: $color-text-ligth;
         // margin-left: auto;
         height: 42px;
-        background-color: black;
+        // background-color: black;
         width: 44px;
         margin-right: 4px;
         display: flex;
@@ -51,7 +51,7 @@
 
     &__menu-icon {
         height: 2px;
-        background-color: $color-text-ligth;
+        background-color: red;
         width: 18px;
         position: relative;
 
@@ -72,7 +72,7 @@
     }
 
     &__menu-btn:checked ~ &__menu-label &__menu-icon {
-        background: transparent;
+       
         &::after {
             transform: rotate(45deg);
             top: 0;
@@ -89,7 +89,7 @@
         position: absolute;
         flex: 2;
         top: 60px;
-        background-color:rgba(63, 62, 62, 0.266);
+        background-color:rgb(196, 30, 15);
         width: 100%;
         height: 0;
         overflow: hidden;
@@ -98,13 +98,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-shadow: red;
+
     }
     &__nav-item {
         padding: 1.25rem 1rem;
         
         &:not(:last-child) {
-            border-bottom: 2px solid rgb(87, 85, 85);
+            border-bottom: 2px solid black;
 
         }
     }
@@ -120,20 +120,7 @@
             transition: background 0.5s ease-in-out;
         }
     }
-    &__nav-link:not(:has(img)){          
-        
-        padding: 0.1rem 0.5rem;
-        border-left: 0.2rem solid red  ;
-        border-right: 0.2rem solid red  ;
-        border-bottom: transparent;
-        &:hover{                       
-            color: $color-bg-primary;                
-            transition: border 0.5s ease;          
-            border-left: 0.2rem solid $color-bg-primary  ;
-            border-right: 0.2rem solid $color-bg-primary  ;
-        }
-    }
-
+  
 }
 
 .user-navbar {
@@ -165,37 +152,6 @@
             flex-direction: row;
             height: 100%;
             width: auto;
-            background-color: transparent;
-        }
-        &__nav-item{
-            padding: 1.25rem 0.75rem;
-            &:not(:last-child){            
-                border-bottom: none;
-            }
-            &:hover{                
-                background: linear-gradient(180deg, black 0%, rgb(64, 64, 64) 100%);
-                transition: background 0.5s ease-in-out;
-            }
-        }
-        &__nav-link:not(:has(img)){          
-            
-            padding: 0.25rem 1rem;
-            border-left: 0.2rem solid gray  ;
-            border-right: 0.2rem solid gray  ;
-            border-bottom: transparent;
-            &:hover{                       
-                color: $color-bg-primary;
-                transition: border 0.5s ease;          
-                border-left: 0.2rem solid $color-bg-primary  ;
-                border-right: 0.2rem solid $color-bg-primary  ;
-            }
-        }
-    }
-    .user-navbar {
-        order: 3;
-        &__cart-icon-container:hover{
-            transition: color 1s ease;
-            color: $color-bg-primary;
         }
     }
 }
@@ -212,28 +168,24 @@
             flex-direction: row;
             height: 100%;
             width: auto;
-            background-color: transparent;
+           
         }
         &__nav-item{
             padding: 1.25rem 0.75rem;
             &:not(:last-child){            
                 border-bottom: none;
             }
-            &:hover{                
-                transition: background 0.5s ease-in-out;
-            }
         }
         &__nav-link:not(:has(img)){          
             
             padding: 0.25rem 1rem;
-            border-left: 0.2rem solid gray  ;
-            border-right: 0.2rem solid gray  ;
-            border-bottom: transparent;
+            border-left: 0.2rem solid black ;
+            border-right: 0.2rem solid black ;
             &:hover{                       
-                color: $color-bg-primary;
+                color: black;
                 transition: border 0.5s ease;          
-                border-left: 0.2rem solid $color-bg-primary  ;
-                border-right: 0.2rem solid $color-bg-primary  ;
+                border-left: 0.2rem solid white  ;
+                border-right: 0.2rem solid white ;
             }
         }
     }
@@ -241,7 +193,7 @@
         order: 3;
         &__cart-icon-container:hover{
             transition: color 1s ease;
-            color: $color-bg-primary;
+            color: black;
         }
     }
 }

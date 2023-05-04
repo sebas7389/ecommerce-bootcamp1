@@ -1,17 +1,17 @@
 //1-a Guardar el formulario en una variable
 const loginForm = document.getElementById('loginForm');
+const users = JSON.parse(localStorage.getItem('users'))||[];
+const {email, password} =loginForm.elements;
 
 //1- Obtener los datos del formulario
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault ();
     console.dir(loginForm);
 
-    const {email, password} =loginForm.elements;
 
 
     //2- Chequear los datos ingresadps con los usarios que tengo
     //2a- Obtener los usuarios almacenados
-    const users = JSON.parse(localStorage.getItem('users'))||[];
 
     const user = users.find((usr) => {
        if(usr.email === email.value) {
