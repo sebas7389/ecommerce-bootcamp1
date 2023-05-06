@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar</title>
+    <title>Home - Ecommerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <!-- Header!! -->
@@ -77,37 +80,52 @@
         </nav>
 
     </header>
-    <div class="login">
-        <h1 class="login__title">LOGIN</h1>
-        <img class="login__img" src="/assets/images/logo R.jpg" alt="">
-        <form class="login__form" id="loginForm">
-            <div class="login__input-group">
-                <label for="email">Email</label>
-                <input type ="email" id="email" name="email" value="seba@gmail.com" requerid minlength="">
-            </div>
-            <div class="login__input-group"> <br>
-                <label for="password1">Contraseña</label>
-                <input type="password" id="password" name="password" requerid>
-            </div>
+    
+    <main class="main">
+        <h1>Mi Orden de Pedido:</h1>
+        <div class="order-table-container">
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>IMAGEN</th>
+                        <th>PRODUCTO</th>
+                        <th>PRECIO</th>
+                        <th>CANTIDAD</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="order-table_body">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="order-finalizar">
+            <button class="order-finalizar__btn" id="order-finalizar-btn" onclick="finalizarCompra()">
+                FINALIZAR COMPRA
+            </button>
+        </div>
+    </main>
 
-            <button type="submit" id="submit" class="btn">Ingresar</button> 
-            <br>
-            <a class="a" href="#">A olvidado su contraseña?</a> <br>
-            <a class="a" href="#">Crear cuenta</a>
-        </form>
-    </div>
+    <!-- icono de whatsapp -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="btn-wsp" target="_blank">
+    <i class="fa fa-whatsapp icon-whatsapp"></i>
+    </a>
+
+<!-- footer! -->
 
     <footer class="footer">
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item"> 
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.facebook.com/" class="footer__contact-link">
                         <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
                         Facebook
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.instagram.com/" class="footer__contact-link">
                         <i class="fa-brands fa-instagram 
                         footer__contact-icon
                         footer__contact-icon--instagram"></i>
@@ -115,7 +133,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://ar.linkedin.com/" class="footer__contact-link">
                         <i class="fa-brands fa-linkedin 
                         footer__contact-icon
                         footer__contact-icon--linkedin"></i>
@@ -123,7 +141,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://twitter.com/?lang=es" class="footer__contact-link">
                         <i class="fa-brands fa-square-twitter
                         footer__contact-icon
                         footer__contact-icon--twitter"></i>
@@ -144,19 +162,19 @@
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="Tel: (+549) 1126580187" class="footer__contact-link">
                         <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
                         Telefono
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.google.com/maps/dir//Pueyrred%C3%B3n+24,+B2800DLB+Z%C3%A1rate,+Buenos+Aires,+Argentina/@-34.0979272,-59.0324944,17z/" class="footer__contact-link">
                         <i class="fa-solid fa-location-dot footer__contact-icon"></i>
                         Localizacion
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="rsystem@gmail.com" class="footer__contact-link">
                         <i class="fa-solid fa-envelope footer__contact-icon"></i>
                         Email
                     </a>
@@ -164,11 +182,12 @@
             </ul>
         </div>
     </footer>
-    
-<script src="/js/login.js"></script>
-<script src="/js/alert.js"></script>
-<!-- <script src="/js/register.js"></script> -->
-<script src="/js/header.js"></script>
 
+   
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="/js/header.js"></script>
+    <script src="/js/alert.js"></script>
+   
 </body>
+
 </html>

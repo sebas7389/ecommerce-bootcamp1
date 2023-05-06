@@ -55,11 +55,13 @@
         display: flex;
         justify-content: space-between;
         padding: 1rem;
+        align-items: baseline;
 
     }
     &__date {
         color:white;
         margin: 10px;
+        text-align: center;
     }
     &__btn {
         padding: 1rem 1rem;
@@ -77,6 +79,24 @@
         font-size: 20px;
         
     }
+    &__btn-detail {
+        padding: 1rem 1rem;
+        margin: 5px;
+        background-color:rgb(169, 178, 169);
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px white;
+        transition: 500ms;
+    }
+    &__btn-detail:hover {
+        padding: 1rem 1rem;
+        margin: 5px;
+        background-color:rgb(58, 66, 68);
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px white;
+        transition: 500ms;
+    }
   
 
 }
@@ -87,5 +107,6 @@
 @media screen and (min-width: 600px) {
     .card{
         height: 800px;
+        
     }
 }

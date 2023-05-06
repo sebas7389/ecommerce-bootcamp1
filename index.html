@@ -19,49 +19,48 @@
 
         
         <nav class="navbar">
+            <button for="" class="navbar__menu-label" id="navbar-menu-btn">
+                <span class="navbar__menu-icon" id="navbar-menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </button>
             <a href="/index.html" class="navbar__nav-link">
                 <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
             </a>
             <div class="user-navbar">
-                <div class="user-navbar__cart-icon-container">
-                    <i class="fa-solid fa-cart-shopping container-cart-icon"></i>
-                </div>
-                <div class="count-products">
-                    <span id="contador-productos">0</span>
-                </div>
-                <div class="container-cart-products hidden-cart">
-                    <div class="row-product">
-                        <div class="cart-product">
-                            <div class="info-cart-product">
-                                <span class="cantidad-producto-carrito">1</span>
-                                <p class="titulo-producto-carrito">MONITOR 24" ASUS VG24VQ CURVO GAMING 144HZ AUDIO</p>
-                                <span class="precio-producto-carrito">$131784</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg> 
-                        </div>
-
-                    </div>
-                    <div class="cart-total">
-                        <h3>Total</h3>
-                        <span class="total-pagar">$200</span>
-                    </div>
-        
-        
-                </div>
-                    
-                <div class="user-navbar__user-avatar-container">
+                <a href="/pages/order/order.html">
+                <button class="user-navbar__cart-icon-container" onclick="OrderC()" id="cartBtnH" disabled="true"></button>
+                    <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
+                </a>
+                <div class="user-navbar__cart-badge" 
+                id="cart-count">0</div>
+            </div> 
+                
+                <div class="user-navbar__user-avatar-container" id="user-navbar-user-avatar-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
                 </div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
             </div>
-            
-            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+              <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
+                
+              <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
+                <li class="user-navbar__nav-item" id="user-navbar__name-user">
+                    <label class="user-navbar__nav-link">Usuario:</label>
+                </li>
+                <li class="user-navbar__nav-item" id="user-navbar__admin-user">
+                    <a href="/pages/adminUser/adminUser.html" class="user-navbar__nav-link">Admin Usuarios</a>
+                </li>
+                <li class="user-navbar__nav-item" id="user-navbar__admin-product">
+                    <a href="/pages/adminProducts/adminProducts.html" class="user-navbar__nav-link">Admin Productos</a>
+                </li>
+                <li class="user-navbar__nav-item" id="sign-in">
+                    <a href="/pages/login/login.html"  class="user-navbar__nav-link">Login</a>
+                </li>
+            </ul> 
 
-            <label for="menu-btn" class="navbar__menu-label">
-                <span class="navbar__menu-icon"></span>
-            </label>
+            
+            
+          
 
 
             <ul class="navbar__nav-links-container">
@@ -75,10 +74,7 @@
                     <a href="/pages/about-us/about.html" class="navbar__nav-link">Nosotros</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
-                </li>
-                <li class="navbar__nav-item" id="sign-in">
-                    <a href="/pages/login/login.html"  class="navbar__nav-link">Login</a>
+                    <a href="/pages/register/register.html" class="navbar__nav-link">Registrate</a>
                 </li>
             </ul>
         </nav>
@@ -141,9 +137,9 @@
                  </div> 
         <div class="section-cards__products-search-conteiner">
                     <div class="product-search">
-                        <!-- <label for="" class="product-search__label">Buscar</label> -->
+                        <label for="" class="product-search__label">Buscar</label>
                         <input type="Text" placeholder="Buscar producto" class="product-search__input">
-                        <button class="product-search__btn" onclick="addCard()">Buscar</button><br>
+                        <button class="product-search__btn" onclick="BuscarP()">Buscar</button><br>
                     </div><br>
 
                     <div class="section-cards__products-count">
@@ -152,9 +148,10 @@
                 </div>
             </header>
 
-                    <h1 class="section-cards__category">
-                        CATEGORÍA: OFERTAS
-                    </h1> 
+            <div class="cards-category-container">
+                <h1 class="cards-category-container__title" id="cards__category"> CATEGORIAS: </h1>
+                    <button class="cards-category-container__btn" id="category-btn-close"> X </button>
+            </div>
 
                     <div id="cards-container" class="cards-container">
                         <article class="card">
@@ -171,16 +168,23 @@
                                     - Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT)<br>
                                     - Monitor de juegos 1500R Full HD de 23.6 pulgadas<br>
                                 </p>
+                                <div class="card__date-price">
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$131.784,00</b>
                                 </div>
                             </div>
+                            </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <button class="card__btn" onclick="btnComprar()" >
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
+                                    </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
                                         Comprar
                                     </button>
                                 </div>
@@ -200,18 +204,23 @@
                                     - Sensibilidad de auriculares: 113dB (+/- 3dB)<br>
                                     - Impedancia: 32 ohmios a 1 kHz<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$13.738,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -222,7 +231,7 @@
                             </div>
                             <div class="card__body">
                                 <div class="card__title">
-                                    Memoria GeiL DDR4 16GB 3000MHz Super Luce RGB Black
+                                    MEMORIA GEIL DDDR4 16GB 3000MHZ SUPER LUCE RGB BLACK
                                 </div>
                                 <p class="card__description">
                                     - Capacidad 16 gb Velocidad 3000 mhz<br>
@@ -230,18 +239,23 @@
                                     - Latencia 16 cl Voltaje 1.35 v<br>
                                     - Aplicación: Computadoras de escritorio<br>                             
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$29.899</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -252,7 +266,7 @@
                             </div>
                             <div class="card__body">
                                 <div class="card__title">
-                                    Fuente ASUS ROG THOR 850W 80 Plus Platinum 850P Full modular
+                                    FUENTE ASUS ROG THOR 850W
                                 </div>
                                 <p class="card__description">
                                     - Watts Nominal 850 w<br> 
@@ -260,18 +274,23 @@
                                     - Formato ATX<br>
                                     - Compatible Con Posición Inferior Si<br>     
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$77.250</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -282,7 +301,7 @@
                             </div>
                             <div class="card__body">
                                 <div class="card__title">
-                                    Cooler CPU ID-Cooling SE-902-SD V2
+                                    COOLER CPU ID COOLING SE-902-SD V2
                                 </div>
                                 <p class="card__description">
                                     - CARACTERISTICAS GENERALES Consumo 5 w Tdp 100 w<br>
@@ -290,18 +309,23 @@
                                     - DIMENSIONES  Altura 123 mm<br>
                                     - COMPATIBILIDAD: Socket Compatibles 1200,1200 Comet Lake<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$4.790</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -312,7 +336,7 @@
                             </div>
                             <div class="card__body">
                                 <div class="card__title">
-                                    Silla Gamer Level Up Ares Negra y Roja 
+                                    SILLA GAMER LEVEL UP
                                 </div>
                                 <p class="card__description">
                                     - Caracterísiticas:<br>
@@ -321,18 +345,23 @@
                                     - Soporta hasta 90kg.<br>
                                     - Almohadillas apoya cervical y lumbar.<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$64.860</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -351,18 +380,23 @@
                                     - Todo esto impulsado por las GPUs GeForce RTX Serie 30 y los monitores NVIDIA® G-SYNC®<br>
                                     - Apunta a los objetivos más rápido<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$116.530,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -381,18 +415,23 @@
                                     - Asegura el mejor rendimiento de las aplicaciones, de la transferencia de datos y la conexión<br>
                                     - Procesador ultra rapido<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$120.530,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -411,18 +450,23 @@
                                     - Suministro de energía potente y una refrigeración eficaz <br>
                                     - la serie Rog Strix Z490-E Gaming está optimizada para las CPU AMD Ryzen™ de 3.ª<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$150.240,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -441,18 +485,23 @@
                                     - única para una atmósfera de juego mejorada.<br>
                                     - El uso de un sensor óptico de grado de juego PMW-3325 con hasta 5000 DPI<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$40.000,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -470,18 +519,23 @@
                                     - Procesador gamer AMD Ryzen 3. Núcleos: el corazón del procesador. <br>
                                     - Son los encargados de asignar a tu dispositivo.<br>
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$160.000,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -498,18 +552,23 @@
                                     - Característica bastante interesante, cuenta con uos nuevos switches óptico-analógicosde<br>
                                     - Ofrece un mejor control.El Razer Huntsman V2 Analog<br> 
                                 </p>
+                                <div class="card__date">
+                                    05/05/2023
+                                </div>
                                 <div class="card__price">
                                     <b>$75.300,00</b>
                                 </div>
                             </div>
                             <div class="card__footer">
-                                <div class="card__date">
-                                    10/03/2023
-                                </div>
                                 <div class="card__btn-container">
-                                    <a class="card__btn" href="#">
-                                        Comprar
+                                    <a href="/pages/productDetail/productDetail.html" class="card__btn-detail" >
+                                    Detalle
                                     </a>
+                                </div> 
+                                <div class="card__btn-container">
+                                    <button onclick="agregarOrden(0)" class="card__btn" href="#">
+                                        Comprar
+                                    </button>
                                 </div>
                             </div>
                         </article> 
@@ -532,13 +591,13 @@
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item"> 
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.facebook.com/" class="footer__contact-link">
                         <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
                         Facebook
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.instagram.com/" class="footer__contact-link">
                         <i class="fa-brands fa-instagram 
                         footer__contact-icon
                         footer__contact-icon--instagram"></i>
@@ -546,7 +605,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://ar.linkedin.com/" class="footer__contact-link">
                         <i class="fa-brands fa-linkedin 
                         footer__contact-icon
                         footer__contact-icon--linkedin"></i>
@@ -554,7 +613,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://twitter.com/?lang=es" class="footer__contact-link">
                         <i class="fa-brands fa-square-twitter
                         footer__contact-icon
                         footer__contact-icon--twitter"></i>
@@ -575,19 +634,19 @@
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="Tel: (+549) 1126580187" class="footer__contact-link">
                         <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
                         Telefono
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.google.com/maps/dir//Pueyrred%C3%B3n+24,+B2800DLB+Z%C3%A1rate,+Buenos+Aires,+Argentina/@-34.0979272,-59.0324944,17z/" class="footer__contact-link">
                         <i class="fa-solid fa-location-dot footer__contact-icon"></i>
                         Localizacion
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="rsystem@gmail.com" class="footer__contact-link">
                         <i class="fa-solid fa-envelope footer__contact-icon"></i>
                         Email
                     </a>
@@ -596,10 +655,8 @@
         </div>
     </footer>
 
-    <script src="/js/product-detail.js"></script>
-   <script src="/js/index.js"></script>
-    <script src="/js/register.js"></script>
-    <script src="/js/login.js"></script>
+   
+    <script src="/js/index.js"></script>
     <script src="/js/header.js"></script>
     <script src="/js/alert.js"></script>
    

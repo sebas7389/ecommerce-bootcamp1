@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://kit.fontawesome.com/5eb6d4163c.js" crossorigin="anonymous"></script>
+    <title>Home - Ecommerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-       <!-- Header!! -->
+
+    <!-- Header!! -->
+
  <!-- Header!! -->
 
  <header class="header">
@@ -82,64 +82,104 @@
     </nav>
 
 </header>
-   
 
-    <main class="main">
-        <section class="section-contact">
-            <div class="contact-container">
-                <div class="contact-container__item">
-                    <h1 class="contact-title">Contáctanos!</h1>
-                    <form class="form-contact">
-                        <div class="name-container form-contact__container">
-                            <label class="name-container__label" for="name">Nombre Completo</label>
-                            <input class="name-container__input input" type="text" name="name" id="name"
-                                placeholder="Nombre y Apellido" required>
-                        </div>
+<h1 class="admin-product__title">ABM Productos</h1>
 
-                        <div class="mail-container form-contact__container">
-                            <label class="mail-container__label" for="email">Email</label>
-                            <input class="mail-container__input input" type="email" name="mail" minlength="8"
-                                maxlength="45"
-                                pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
-                                id="email" placeholder="example@email.com" required>
-                        </div>
-                        <div class="consult-container form-contact__container">
-                            <label for="consult-container__label">Consulta</label> <br>
-                            <textarea class="consult-container__text-area" name="consults" cols="40"
-                                rows="5"></textarea>
-                        </div>
-                        <button class="contact-btn" type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="contact-container__item">
-                    <h1 class="contact-title">Visítanos!</h1>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d817.0589518863014!2d-58.05507979725362!3d-35.00080181705491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1674578060757!5m2!1ses-419!2sar"
-                        class="input-map" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
-    </main>
+<main class="main admin-product-container">
+<form class="admin-product-form" id="admin-product-form" onsubmit="addProduct(event)"         data-custom="Mi atributo personal">
+<div class="admin-product-form__items">
+<label for="name" >Nombre Producto</label><br>
+<input type="text" name="name" class="admin-product-form__input"
+id="name" placeholder="Nombre del Producto" 
+required minlength="3" maxlength="50" autofocus >
+</div>
+<div class="admin-product-form__items">
+<label for="category">Categoria</label><br>
+<select name="category" id="category"  class="admin-product-form__input" required>
+    <option value="MO">Monitor</option>
+    <option value="AU">Auriculares</option>
+    <option value="ME">Memoria</option>
+    <option value="FU">Fuente</option>
+    <option value="CO">Cooler</option>
+    <option value="SI">Silla</option>          
+</select>
+</div>
+<div class="admin-product-form__items">
+<label for="description" >Descripción</label><br>
+<textarea name="description" class="admin-product-form__input"
+id="description" rows="5" required> </textarea>
+</div>
+<div class="admin-product-form__items">
+<label for="price" >Precio</label><br>
+<input type="number" name="price" id="price" required min="1" class="admin-product-form__input"  > 
+</div>  
+<div class="admin-product-form__items">
+<label for="image">URL de Imagen</label><br>
+<input type="url" name="image" id="image"
+       placeholder="https://example.com"
+       pattern="https://.*" size="30"
+       required
+       class="admin-product-form__input">
 
-      <!-- icono de whatsapp -->
+</div>
+<div class="admin-product-form__items">
+<label for="bornDateInput">Fecha de Actualización</label><br>
+<input type="date" name="date" id="bornDateInput" class="admin-product-form__input"
+placeholder="dd/mm/aaaa"   >
+</div>
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-      <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="btn-wsp" target="_blank">
-      <i class="fa fa-whatsapp icon-whatsapp"></i>
-      </a>
+<div class="admin-product-form__form-items">
+<button type="submit" class="admin-product__submit-btn" id="admin-product__submit-btn">Cargar Producto</button> 
+</div>
+
+</form>
+<div class="admin-product-table-container">
+<div class="admin-product-search-container">
+<label for="search" style="font-weight: bold;">Buscar en la Tabla:</label>
+<input type="text" name="search" class="admin-product-form__input" id="search" >
+<button  type="button" class="admin-product-search-container__btn" onclick="metodoFilter()" >Filtrar</button><br>
+<label id="admin-product-search-container_cant">Cantidad de Coincidencias: 0</label>
+</div>
+<h2>Tabla de Productos:</h2>
+<table class="admin-product-table">
+<thead>
+    <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+<tbody id="admin-product-table_body">
+    
+</tbody>
+</table>
+</div>
+
+</main>
+
+    <!-- icono de whatsapp -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="btn-wsp" target="_blank">
+    <i class="fa fa-whatsapp icon-whatsapp"></i>
+    </a>
+
+<!-- footer! -->
 
     <footer class="footer">
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item"> 
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.facebook.com/" class="footer__contact-link">
                         <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
                         Facebook
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.instagram.com/" class="footer__contact-link">
                         <i class="fa-brands fa-instagram 
                         footer__contact-icon
                         footer__contact-icon--instagram"></i>
@@ -147,7 +187,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://ar.linkedin.com/" class="footer__contact-link">
                         <i class="fa-brands fa-linkedin 
                         footer__contact-icon
                         footer__contact-icon--linkedin"></i>
@@ -155,7 +195,7 @@
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://twitter.com/?lang=es" class="footer__contact-link">
                         <i class="fa-brands fa-square-twitter
                         footer__contact-icon
                         footer__contact-icon--twitter"></i>
@@ -176,19 +216,19 @@
         <div class="footer__column">
             <ul class="footer__contact-container">
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="Tel: (+549) 1126580187" class="footer__contact-link">
                         <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
                         Telefono
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="https://www.google.com/maps/dir//Pueyrred%C3%B3n+24,+B2800DLB+Z%C3%A1rate,+Buenos+Aires,+Argentina/@-34.0979272,-59.0324944,17z/" class="footer__contact-link">
                         <i class="fa-solid fa-location-dot footer__contact-icon"></i>
                         Localizacion
                     </a>
                 </li>
                 <li class="footer__contact-item">
-                    <a href="#" class="footer__contact-link">
+                    <a href="rsystem@gmail.com" class="footer__contact-link">
                         <i class="fa-solid fa-envelope footer__contact-icon"></i>
                         Email
                     </a>
@@ -196,6 +236,12 @@
             </ul>
         </div>
     </footer>
+
+   
+    <!-- <script src="/js/adminProducts.js"></script> -->
+    <script src="/js/header.js"></script>
+    <script src="/js/alert.js"></script>
+   
 </body>
 
 </html>

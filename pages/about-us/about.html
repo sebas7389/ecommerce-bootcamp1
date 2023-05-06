@@ -12,45 +12,73 @@
 <body>
       <!-- Header!! -->
 
-      <header class="header">
-        <nav class="navbar">
-            <a href="/index.html" class="navbar__nav-link">
-                <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
-            </a>
-            <div class="user-navbar">
-                <div class="user-navbar__cart-icon-container">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="user-navbar__user-avatar-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
-                </div>
-                <!-- TODO: avatar de la persona logueada o nombre -->
-            </div>
-            
-            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+  <!-- Header!! -->
 
-            <label for="menu-btn" class="navbar__menu-label">
-                <span class="navbar__menu-icon"></span>
-            </label>
+  <header class="header">
 
-
-            <ul class="navbar__nav-links-container">
-                <li class="navbar__nav-item">
-                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
-                </li>
-                <li class="navbar__nav-item">
-                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
-                </li>
-                <li class="navbar__nav-item">
-                    <a href="/pages/about-us/about.html" class="navbar__nav-link">Nosotros</a>
-                </li>
-                <li class="navbar__nav-item">
-                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
-                </li>
-            </ul>
-        </nav>
         
-    </header>
+    <nav class="navbar">
+        <button for="" class="navbar__menu-label" id="navbar-menu-btn">
+            <span class="navbar__menu-icon" id="navbar-menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+        </button>
+        <a href="/index.html" class="navbar__nav-link">
+            <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
+        </a>
+        <div class="user-navbar">
+            <div class="user-navbar__cart-icon-container">
+                <a href="/pages/order/order.html">
+                <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
+            </a>
+            <div class="user-navbar__cart-badge" 
+            id="cart-count">0</div>
+        </div> 
+            
+            <div class="user-navbar__user-avatar-container" id="user-navbar-user-avatar-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+            </div>
+            <!-- TODO: avatar de la persona logueada o nombre -->
+        </div>
+          <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
+            
+          <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
+            <li class="user-navbar__nav-item" id="user-navbar__name-user">
+                <label class="user-navbar__nav-link">Usuario:</label>
+            </li>
+            <li class="user-navbar__nav-item" id="user-navbar__admin-user">
+                <a href="/pages/adminUser/adminUser.html" class="user-navbar__nav-link">Admin Usuarios</a>
+            </li>
+            <li class="user-navbar__nav-item" id="user-navbar__admin-product">
+                <a href="/pages/adminProducts/adminProducts.html" class="user-navbar__nav-link">Admin Productos</a>
+            </li>
+            <li class="user-navbar__nav-item" id="sign-in">
+                <a href="/pages/login/login.html"  class="user-navbar__nav-link">Login</a>
+            </li>
+        </ul> 
+
+        
+        
+      
+
+
+        <ul class="navbar__nav-links-container">
+            <li class="navbar__nav-item">
+                <a href="/index.html" class="navbar__nav-link">Inicio</a>
+            </li>
+            <li class="navbar__nav-item">
+                <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+            </li>
+            <li class="navbar__nav-item">
+                <a href="/pages/about-us/about.html" class="navbar__nav-link">Nosotros</a>
+            </li>
+            <li class="navbar__nav-item">
+                <a href="/pages/register/register.html" class="navbar__nav-link">Registrate</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
 <main class="mainContainer">
     <div class="mainContainer__container">
         <div class="mainContainer__parrafo">

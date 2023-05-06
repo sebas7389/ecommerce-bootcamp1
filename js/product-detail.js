@@ -17,3 +17,21 @@ function slideImage(){
 }
 
 window.addEventListener('resize', slideImage);
+
+// //Alerta de Producto agregado
+// showAlert('Producto agregado a la Orden','exito');
+
+// }
+
+// function comprarOrden(){
+
+//   const existe = Order.find((prod)=>{
+//     if(product.name === product.name){
+//           return prod;
+//     }
+//   })
+//   if(!existe)
+//      agregarOrden();
+//   window.location.href = "/pages/order/order.html";
+
+// }
