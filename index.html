@@ -28,8 +28,8 @@
                 <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
             </a>
             <div class="user-navbar">
+                <div class="user-navbar__cart-icon-container">
                 <a href="/pages/order/order.html">
-                <button class="user-navbar__cart-icon-container" onclick="OrderC()" id="cartBtnH" disabled="true"></button>
                     <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
                 </a>
                 <div class="user-navbar__cart-badge" 
@@ -40,7 +40,7 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
                 </div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
-            </div>
+         
               <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
                 
               <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
@@ -56,13 +56,9 @@
                 <li class="user-navbar__nav-item" id="sign-in">
                     <a href="/pages/login/login.html"  class="user-navbar__nav-link">Login</a>
                 </li>
-            </ul> 
-
-            
-            
-          
-
-
+             </ul> 
+        </div>
+        
             <ul class="navbar__nav-links-container">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>

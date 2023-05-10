@@ -261,7 +261,7 @@ body {
   border-bottom: solid 4px red;
 }
 .navbar__logo {
-  height: 35px;
+  height: 55px;
   margin: 4px;
   color: black;
   padding: 3px;
@@ -379,6 +379,22 @@ body {
   border-radius: 50%;
   background-color: black;
   color: white;
+}
+.user-navbar__nav-links-container {
+  list-style: none;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: rgb(229, 238, 227);
+  width: 120px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
