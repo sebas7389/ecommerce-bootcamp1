@@ -27,16 +27,17 @@ loginForm.addEventListener('submit', (event) => {
         }
         // Otra forma seria poner un else cuando los datos no son iguales y repetir
 
-    if(!user||user.password !== password.value){
+   
     localStorage.setItem('currentUser' , JSON.stringify(user));
+
     //TODO: Insertar alerta custom
     showAlert('Login correcto te redireccionaremos en unos instantes...')
     
     setTimeout(()=> {
         window.location.href = '/index.html';
     },1500)
-};
-})
+});
+
     //a- Email que me ingreso, lo tiene algun usuario de mi array
     //b- password deberian ser las mismas
 //3- Guardar en el localStorage un registro que va a ser currentUser - user

@@ -53,13 +53,10 @@
                 <li class="user-navbar__nav-item" id="user-navbar__admin-product">
                     <a href="/pages/adminProducts/adminProducts.html" class="user-navbar__nav-link">Admin Productos</a>
                 </li>
-                <li class="user-navbar__nav-item" id="sign-in">
-                    <a href="/pages/login/login.html"  class="user-navbar__nav-link">Login</a>
-                </li>
              </ul> 
         </div>
         
-            <ul class="navbar__nav-links-container">
+            <ul class="navbar__nav-links-container" id="navbar__nav-linksC">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
@@ -72,12 +69,16 @@
                 <li class="navbar__nav-item">
                     <a href="/pages/register/register.html" class="navbar__nav-link">Registrate</a>
                 </li>
+                <li class="navbar__nav-item" id="sign-in">
+                    <a href="/pages/login/login.html"  class="navbar__nav-link">Login</a>
+                </li>
             </ul>
         </nav>
 
     </header>
     
     <main class="main">
+
     <!-- TODO: Carousel !  -->
     <div class="slider">
         <div class="slide-track">
@@ -134,11 +135,11 @@
         <div class="section-cards__products-search-conteiner">
                     <div class="product-search">
                         <label for="" class="product-search__label">Buscar</label>
-                        <input type="Text" placeholder="Buscar producto" class="product-search__input">
+                        <input type="Text" placeholder="Buscar producto" class="product-search__input" id="search-input">
                         <button class="product-search__btn" onclick="BuscarP()">Buscar</button><br>
                     </div><br>
 
-                    <div class="section-cards__products-count">
+                    <div class="section-cards__products-count" id="product-count">
                         Se encontraron X Productos
                     </div>
                 </div>
@@ -146,11 +147,10 @@
 
             <div class="cards-category-container">
                 <h1 class="cards-category-container__title" id="cards__category"> CATEGORIAS: </h1>
-                    <button class="cards-category-container__btn" id="category-btn-close"> X </button>
             </div>
 
-                    <div id="cards-container" class="cards-container">
-                        <article class="card">
+                    <div class="card-container" id="card-container">
+                        <!-- <article class="card">
                             <div class="card__header">
                                 <img src="/assets/images/imagenes de cards venta/monitor-24-asus-vg24vq-curvo-gaming-144hz-audio-0.jpg" alt="Product Image" class="card__img">
                             </div>
@@ -567,8 +567,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </article> 
-                    
+                        </article>  -->
                     </div>
                         
             </section>
@@ -655,6 +654,7 @@
     <script src="/js/index.js"></script>
     <script src="/js/header.js"></script>
     <script src="/js/alert.js"></script>
+    <script src="/js/orders.js"></script>
    
 </body>
 

@@ -57,7 +57,7 @@ function renderizarTabla(){
                 </td>
         </tr>
        ` 
-       tableBody.innerHTML += tableRow; 
+       tableBody.innerHTML += ''; 
 }
 
 renderizarTabla();
