@@ -1,4 +1,4 @@
-const params = window.location.search;
+const params = location.search;
 
 const index = params.split('id=')[1];
 
@@ -10,92 +10,120 @@ const products = JSON.parse(localStorage.getItem('products'));
 
 const product = products[index];
 
+const mainD = document.getElementById('main')
+
+function renderizarDetail() {
+  mainD.innerHTML = ``;
+
+  const detial = `
+                <div class = "card__detailr">
+                <div class = "card__detail">
+                  <!-- card left -->
+                  <div class = "detail-imgs">
+                    <div class = "detail-img-display">
+                      <div class = "detail-img-showcase">
+                        <img src = "${product.image}" alt="${product.name}">
+                       
+                      </div>
+                    </div>
+                    <div class = "detail-select">
+                      <div class = "detail-img-item">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- card right -->
+                  <div class = "detail-product-content">
+                    <h2 class = "detail-product-title">${product.name}</h2>
+                    <a href = "#" class = "product-link">visita nuestra pagina Rsystem</a>
+                    <div class = "detail-product-rating">
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star-half-alt"></i>
+                      <span>4.7(21)</span>
+                    </div>
+
+                    <div class = "detail-product-price">
+                      <p ${product.price}</p>
+                      <p ${product.price}</p>
+                    </div>
+
+                    <div class = "detail-product-detail">
+                      <p>${product.description}</p>
+                      <ul>
+                        <li>Disponible: <span>En stock</span></li>
+                        <li>Envio: <span>Gratis</span></li>
+                      </ul>
+                    </div>
+
+                    <div class = "purchase-info">
+                    <h2>Cantidad</h2>
+                    <div class="product-quantity-container__increase quantity-product">
+                      <button class="quantity-product__btn" onclick="decreaseInput()">
+                          -
+                      </button>
+                      <input type="number" class="quantity-product__input" id="quantityInput" value=1>
+                      <button class="quantity-product__btn" onclick="increaseInput()">
+                          +
+                      </button>
+                  </div>
+                    
+                    <button class = "btn" onclick="addCart()">
+                      Añadir al carrito <i class = "fas fa-shopping-cart"></i>
+                    </button>
+                    <button class = "btn" onclick="btnComprar()">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+
+  mainD.innerHTML = detial
+} 
+renderizarDetail()
     
-const imgProduct =  document.getElementById('product-detail-container-img-img');
-const sitioProduct =  document.getElementById('product-detail-container-description__sitio');
-imgProduct.src = product.image;
-sitioProduct.href=product.image;
-sitioProduct.innerHTML=product.image;
-
-const catProduct =  document.getElementById('product-detail-container-order-head__category');
-
-catProduct.innerText = product.category;
-
-const nameProduct =  document.getElementById('product-detail-container-order-head__name');
-
-nameProduct.innerText = product.name;
-
-const descProduct =  document.getElementById('product-detail-container-order-main__desc'); 
-const descriptionProduct =  document.getElementById('product-detail-container-description__desc'); 
- 
-descriptionProduct.innerText =product.description;
-descProduct.innerText = product.description;
-
-const priceProduct =  document.getElementById('product-detail-container-order-params__price');
-
-priceProduct.innerText = '$ ' + product.price;
 
 
-function increment(button) {
-    var input = button.parentNode.querySelector('input[type="text"]');
-    var value = parseInt(input.value, 10);
-    input.value = isNaN(value) ? 1 : value + 1;
-   // updateTotal();
-  }
+
+let input = document.getElementById("quantityInput");
+    let currentValue = parseInt(input.value);
+
+    function increaseInput() {
+        input.value = currentValue + 1;
+        currentValue = parseInt(input.value);
+    }
+
+    function decreaseInput() {
+        if (currentValue > 1) {
+            input.value = currentValue - 1;
+            currentValue = parseInt(input.value);
+        }
+    }
   
-  function decrement(button) {
-    var input = button.parentNode.querySelector('input[type="text"]');
-    var value = parseInt(input.value, 10);
-    input.value = isNaN(value) ? 1 : value - 1;
-    if (input.value < 1) {
-      input.value = 1;
+
+  function addCart() {
+    const existingCartItems = JSON.parse(sessionStorage.getItem('order')) || [];
+    const updatedProduct = { ...product, quantity: parseInt(document.querySelector('.quantity-product__input').value) };
+    const existingProductIndex = existingCartItems.findIndex(item => item.name === updatedProduct.name);
+    if (existingProductIndex !== -1) {
+        existingCartItems[existingProductIndex].quantity += updatedProduct.quantity;
+    } else {
+        existingCartItems.push(updatedProduct);
     }
+    sessionStorage.setItem('order', JSON.stringify(existingCartItems));
+};
     
+function btnComprar() {
+  const existingCartItems = JSON.parse(sessionStorage.getItem('order')) || [];
+  const updatedProduct = { ...product, quantity: parseInt(document.querySelector('.quantity-product__input').value) };
+  const existingProductIndex = existingCartItems.findIndex(item => item.name === updatedProduct.name);
+  if (existingProductIndex !== -1) {
+      existingCartItems[existingProductIndex].quantity += updatedProduct.quantity;
+  } else {
+      existingCartItems.push(updatedProduct);
   }
-  
+  sessionStorage.setItem('order', JSON.stringify(existingCartItems));
 
-function agregarOrden(){
-    const cantProd = document.getElementById("product-detail-container-order-params__num")        
-    const newOrder = {
-        image: product.image,
-        name: product.name,
-        price: product.price,
-        cant: parseInt(cantProd.value),
-        total: parseInt(cantProd.value) * parseInt(product.price)
-        
-    }
-    
-    const prod = Order.find((prod)=>{
-      if(prod.name === product.name){
-        prod.cant = parseInt(prod.cant) + parseInt(cantProd.value);
-        prod.total = prod.cant * parseInt(prod.price);
-        return prod;
-      }
-    })
 
-    if(!prod) {
-      Order.push(newOrder);
-    }
-
-// //Guardarlo en el local storage
-localStorage.setItem('order',JSON.stringify( Order));
-
-contarProductos();
-
-//Alerta de Producto agregado
-showAlert('Producto agregado a la Orden','exito');
-
-}
-
-function comprarOrden(){
-
-  const existe = Order.find((prod)=>{
-    if(product.name === product.name){
-          return prod;
-    }
-  })
-  if(!existe)
-     agregarOrden();
-  window.location.href = "/pages/order/order.html";
-
-}
+  window.location.replace("/pages/order/order.html");
+};

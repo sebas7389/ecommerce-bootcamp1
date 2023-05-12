@@ -1,60 +1,61 @@
 cardContainer = document.getElementById('card-container');
-// const btnCloseCategory = document.getElementById("category-btn-close");
+// Products = JSON.parse(localStorage.getItem("Products")) || [];
 
-Products = JSON.parse(localStorage.getItem('products')) || [];
-
-function renderizarProductos(products) {
+function renderizarProductos(productsL) {
 
     cardContainer.innerHTML = ``;
 
-    if (products.length === 0) {
+    if (productsL.length === 0) {
         cardContainer.innerHTML = `<h1 class="disabled">ERROR, NO SE ENCONTRARON PRODUCTOS</h1>`;
         return;
     }
 
-    products.forEach((product,index )=> {
-        
-    const card = document.createElement('article');
-    card.classList.add('card');
+    productsL.forEach((producto,index )=> {
 
-    card.innerHTML = `<div class="card__header">
-        <img src="${imageSrc}" alt="${product.name}" class="card__img">
-    </div>
-    <div class="card__body">
-        <div class="card__title">
-        ${product.name}
-        </div>
-        <p class="card__description">
-        ${product.description}    
-        </p>
-        <div class="card__date-price">
-            <div class="card__date">
-                ${product.date}
-            </div>
-            <div class="card__price">
-               $ ${product.price}
-            </div>
-    </div>
-    <div class="card__footer">
-        <div class="card__btn-container">
-            <a href="/pages/productDetail/productDetail.html?id=${index}" class="card__btn-detail" >
-            Detalle
-            </a>
-        </div>  
-        <div class="card__btn-container">
-            <button onclick="agregarOrden(${index})" class="card__btn" >
-                Comprar
-            </button>
-        </div>
-    </div>`
+    let imageSrc = producto.image ? producto.image : '/assets/images/funciones-pagina/not-found.webp';
+    
+    // let index = Products.findIndex((p) => p.name === producto.name);
 
+    const card = `
+                <article class="card">
+                <div class="card__header">
+                    <img src="${imageSrc}" alt="${producto.name}" class="card__img">
+                </div>
+                <div class="card__body">
+                    <div class="card__title">
+                    ${producto.name}
+                    </div>
+                    <p class="card__description">
+                    ${producto.description}    
+                    </p>
+                    <div class="card__date-price">
+                        <div class="card__date">
+                            ${producto.date}
+                        </div>
+                        <div class="card__price">
+                        $ ${producto.price}
+                        </div>
+                </div>
+                <div class="card__footer">
+                    <div class="card__btn-container">
+                        <a href="/pages/productDetail/productDetail.html?id=${index}" class="card__btn-detail" >
+                        Detalle
+                        </a>
+                    </div>  
+                    <div class="card__btn-container">
+                        <button onclick="agregarOrden(${index})" class="card__btn" >
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </article>`
 
     cardContainer.innerHTML+= card;
 
     });
 
 }
-renderizarProductos(products);
+renderizarProductos(Products);
 
 function searchProduct() {
     var searchTerm = document.getElementById('search-input').value;

@@ -22,42 +22,41 @@ let Products = JSON.parse(localStorage.getItem("Products"));
 
     if (!Products || Products.length === 0) {
         Products = [{
-            category:"MO",
             date:"2023-05-02",
             description:" - Monitor Curvo Gamer TUF Gaming VG24VQ, 23.6 pulgadas Full HD (1920 x 1080), 144Hz, Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT), Monitor de juegos 1500R Full HD de 23.6 pulgadas",
             image:"https://fullh4rd.com.ar/img/productos/Pics_Prod/monitor-24-asus-vg24vq-curvo-gaming-144hz-audio-0.jpg",
             name:"MONITOR 24 ASUS VG24VQ CURVO GAMING 144HZ AUDIO",
             price:24900},
 
-            {category:"AU",
+            {
             date:"2023-05-02",
             description:" - - Producto de audio: auriculares Micrófono Desmontable Sí , Respuesta de frecuencia de auriculares: 20Hz - 20 kHz, Sensibilidad de auriculares: 113dB (+/- 3dB), Impedancia: 32 ohmios a 1 kHz",
             image:"https://benchmarkhardware.com/wp-content/uploads/2019/06/Corsair_Corsair-HS35-Stereo_Stereo_BH_2-1280x720.jpg",
             name:"AURICULARES CORSAIR GAMING HS35 GREEN",
             price:13738},
 
-            {category:"ME",
+            {
             date:"2023-05-02",
             description:" - Capacidad 16 gb Velocidad 3000 mhz, Tipo DDR4 Cantidad De Memorias 1, Latencia 16 cl Voltaje 1.35 v, Aplicación: Computadoras de escritorio",
             image:"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17125_Memoria_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_981aafa9-grn.jpg",
             name:"MEMORIA GEIL DDDR4 16GB 3000MHZ SUPER LUCE RGB BLACK",
             price:29899},
 
-            {category:"FU",
+            {
             date:"2023-05-02",
             description:" - Watts Nominal 850 w, Watts Reales 852 w, Formato ATX, Compatible Con Posición Inferior Si",
             image:"https://mla-s1-p.mlstatic.com/841418-MLA44596970630_012021-F.jpg",
             name:"FUENTE ASUS ROG THOR 850W",
             price:77250},
 
-            {category:"CO",
+            {
             date:"2023-05-02",
             description:" - - CARACTERISTICAS GENERALES Consumo 5 w Tdp 100 w, Tipo De Disipasión: Aire, DIMENSIONES Altura 123 mm, COMPATIBILIDAD: Socket Compatibles 1200,1200 Comet Lake",
             image:"https://teamtecno.com.ar/wp-content/uploads/2021/06/1618975055dc9f82a2e5cd2513806f93587ea401e0.jpg",
             name:"COOLER CPU ID COOLING SE-902-SD V2",
             price:4790},
 
-            {category:"SI",
+            {
             date:"2023-05-02",
             description:" - Caracterísiticas:Respaldo reclinable en multiples ángulos (90º / 130º / 170º), Marco de acero con diseño ergonómico.Soporta hasta 90kg.Almohadillas apoya cervical y lumbar.",
             image:"https://s3-sa-east-1.amazonaws.com/saasargentina/SHmJdi9RptjyWMk4Kzea/imagen",
@@ -81,10 +80,11 @@ function actualizarBadge() {
 
 
     badgeHTML.innerText = totalQuantity
+    
+    actualizarBadge()
 }
 
 
-actualizarBadge()
 
 function renderHeaderLinks(){    
 

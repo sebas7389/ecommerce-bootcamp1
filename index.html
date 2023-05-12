@@ -19,18 +19,13 @@
 
         
         <nav class="navbar">
-            <button for="" class="navbar__menu-label" id="navbar-menu-btn">
-                <span class="navbar__menu-icon" id="navbar-menu-icon">
-                    <i class="fa-solid fa-bars"></i>
-                </span>
-            </button>
             <a href="/index.html" class="navbar__nav-link">
                 <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
             </a>
             <div class="user-navbar">
-                <div class="user-navbar__cart-icon-container">
                 <a href="/pages/order/order.html">
-                    <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
+                <div class="user-navbar__cart-icon-container">
+                <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
                 </a>
                 <div class="user-navbar__cart-badge" 
                 id="cart-count">0</div>
@@ -70,7 +65,8 @@
                     <a href="/pages/register/register.html" class="navbar__nav-link">Registrate</a>
                 </li>
                 <li class="navbar__nav-item" id="sign-in">
-                    <a href="/pages/login/login.html"  class="navbar__nav-link">Login</a>
+                    <a href="/pages/login/login.html"  class="navbar__nav-link">Login
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -132,11 +128,11 @@
                            Lo mejor en tecnologia lo podes encontrar en Rsystem
                         </p>
                  </div> 
-        <div class="section-cards__products-search-conteiner">
+                <div class="section-cards__products-search-conteiner">
                     <div class="product-search">
                         <label for="" class="product-search__label">Buscar</label>
                         <input type="Text" placeholder="Buscar producto" class="product-search__input" id="search-input">
-                        <button class="product-search__btn" onclick="BuscarP()">Buscar</button><br>
+                        <button class="product-search__btn" >Buscar</button><br>
                     </div><br>
 
                     <div class="section-cards__products-count" id="product-count">
@@ -144,12 +140,10 @@
                     </div>
                 </div>
             </header>
+                <h1 class="section-cards__category"> CATEGORIAS: OFERTAS </h1>
+           
 
-            <div class="cards-category-container">
-                <h1 class="cards-category-container__title" id="cards__category"> CATEGORIAS: </h1>
-            </div>
-
-                    <div class="card-container" id="card-container">
+                    <div class="cards-container" id="card-container">
                         <!-- <article class="card">
                             <div class="card__header">
                                 <img src="/assets/images/imagenes de cards venta/monitor-24-asus-vg24vq-curvo-gaming-144hz-audio-0.jpg" alt="Product Image" class="card__img">
@@ -651,9 +645,9 @@
     </footer>
 
    
-    <script src="/js/index.js"></script>
     <script src="/js/header.js"></script>
     <script src="/js/alert.js"></script>
+    <script src="/js/index.js"></script>
     <script src="/js/orders.js"></script>
    
 </body>

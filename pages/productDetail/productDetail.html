@@ -22,19 +22,33 @@
               <img class="navbar__logo" src="/assets/images/logo R.jpg" alt="Logo del ecommerce">
           </a>
           <div class="user-navbar">
-              <div class="user-navbar__cart-icon-container">
-                  <a href="/pages/order/order.html">
-                  <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
-              </a>
-              <div class="user-navbar__cart-badge" 
-              id="cart-count">0</div>
-          </div> 
-              
-              <div class="user-navbar__user-avatar-container" id="user-navbar-user-avatar-container">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
-              </div>
-              <!-- TODO: avatar de la persona logueada o nombre -->
-          </div>
+            <div class="user-navbar__cart-icon-container">
+            <a href="/pages/order/order.html">
+            <i class="fa-solid fa-cart-shopping user-navbar__cart-icon-container"></i>
+            </a>
+            <div class="user-navbar__cart-badge" 
+            id="cart-count">0</div>
+        </div> 
+            
+            <div class="user-navbar__user-avatar-container" id="user-navbar-user-avatar-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+            </div>
+            <!-- TODO: avatar de la persona logueada o nombre -->
+     
+          <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
+            
+          <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
+            <li class="user-navbar__nav-item" id="user-navbar__name-user">
+                <label class="user-navbar__nav-link">Usuario:</label>
+            </li>
+            <li class="user-navbar__nav-item" id="user-navbar__admin-user">
+                <a href="/pages/adminUser/adminUser.html" class="user-navbar__nav-link">Admin Usuarios</a>
+            </li>
+            <li class="user-navbar__nav-item" id="user-navbar__admin-product">
+                <a href="/pages/adminProducts/adminProducts.html" class="user-navbar__nav-link">Admin Productos</a>
+            </li>
+         </ul> 
+    </div>
             <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
               
             <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
@@ -74,11 +88,11 @@
 
   </header>
     
-  <main class="main">
-    <div class = "card__detailr">
+  <main class="main" id="main">
+    <!-- <div class = "card__detailr">
       <div class = "card__detail">
         <!-- card left -->
-        <div class = "product-imgs">
+        <!-- <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
               <img src = "/assets/images/imagenes de cards venta/shopping (1).webp" alt = "shoe image">
@@ -99,7 +113,7 @@
           </div>
         </div>
         <!-- card right -->
-        <div class = "product-content">
+        <!-- <div class = "product-content">
           <h2 class = "product-title">MONITOR 24" ASUS VG24VQ CURVO GAMING 144HZ AUDIO</h2>
           <a href = "#" class = "product-link">visita nuestra pagina Rsystem</a>
           <div class = "product-rating">
@@ -117,7 +131,7 @@
           </div>
 
           <div class = "product-detail">
-            <p>- Monitor Curvo Gamer TUF Gaming VG24VQ
+            <p> - Monitor Curvo Gamer TUF Gaming VG24VQ
               - 23.6 pulgadas Full HD (1920 x 1080), 144Hz
               - Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT)
               - Monitor de juegos 1500R Full HD de 23.6 pulgadas</p>
@@ -129,15 +143,24 @@
 
           <div class = "purchase-info">
             <h2>Cantidad</h2>
+            <div class="product-quantity-container__increase quantity-product">
+              <button class="quantity-product__btn" onclick="decreaseInput()">
+                  -
+              </button>
+              <input type="number" class="quantity-product__input" id="quantityInput" value=1>
+              <button class="quantity-product__btn" onclick="increaseInput()">
+                  +
+              </button>
+          </div>
             <input type = "number" min = "0" value = "1">
-            <button type = "button" class = "btn">
+            <button class = "btn" onclick="addCart()">
               Añadir al carrito <i class = "fas fa-shopping-cart"></i>
             </button>
-            <button type = "button" class = "btn">Comprar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+            <button class = "btn" onclick="btnComprar()">Comprar</button>
+          </div> -->
+        <!-- </div> -->
+      <!-- </div> --> -->
+    <!-- </div> --> -->
 </main>
     
 
@@ -213,5 +236,7 @@
   <script src="/js/alert.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/product-detail.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/orders.js"></script>
   </body>
 </html>

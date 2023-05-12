@@ -1,11 +1,13 @@
-
 .card__detailr{
     max-width: 1100px;
     margin: auto;
     border: solid 1px white;
+    display: flex;
+    
 }
 img{
     width: 100%;
+    object-fit: cover;
 }
 .img-display{
     overflow: hidden;
@@ -21,14 +23,7 @@ img{
 .img-select{
     display: flex;
 }
-.img-item{
-    margin: 0.3rem;
-}
-.img-item:nth-child(1),
-.img-item:nth-child(2),
-.img-item:nth-child(3){
-    margin-right: 0;
-}
+
 .img-item:hover{
     opacity: 0.8;
 }
