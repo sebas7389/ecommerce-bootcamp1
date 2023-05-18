@@ -63,13 +63,13 @@ function renderizarDetail() {
                       <button class="quantity-product__btn" onclick="decreaseInput()">
                           -
                       </button>
-                      <input type="number" class="quantity-product__input" id="quantityInput" value=1>
+                      <input type="number" class="quantity-product__input" id="quantity-input" value=1>
                       <button class="quantity-product__btn" onclick="increaseInput()">
                           +
                       </button>
                   </div>
                     
-                    <button class = "btn" onclick="addCart()">
+                    <button class = "btn" onclick="addToCart()">
                       Añadir al carrito <i class = "fas fa-shopping-cart"></i>
                     </button>
                     <button class = "btn" onclick="btnComprar()">Comprar</button>
@@ -85,7 +85,7 @@ renderizarDetail()
 
 
 
-let input = document.getElementById("quantityInput");
+let input = document.getElementById("quantity-input");
     let currentValue = parseInt(input.value);
 
     function increaseInput() {
@@ -101,29 +101,48 @@ let input = document.getElementById("quantityInput");
     }
   
 
-  function addCart() {
-    const existingCartItems = JSON.parse(sessionStorage.getItem('order')) || [];
-    const updatedProduct = { ...product, quantity: parseInt(document.querySelector('.quantity-product__input').value) };
-    const existingProductIndex = existingCartItems.findIndex(item => item.name === updatedProduct.name);
-    if (existingProductIndex !== -1) {
-        existingCartItems[existingProductIndex].quantity += updatedProduct.quantity;
-    } else {
-        existingCartItems.push(updatedProduct);
-    }
-    sessionStorage.setItem('order', JSON.stringify(existingCartItems));
-};
-    
-function btnComprar() {
-  const existingCartItems = JSON.parse(sessionStorage.getItem('order')) || [];
-  const updatedProduct = { ...product, quantity: parseInt(document.querySelector('.quantity-product__input').value) };
-  const existingProductIndex = existingCartItems.findIndex(item => item.name === updatedProduct.name);
-  if (existingProductIndex !== -1) {
-      existingCartItems[existingProductIndex].quantity += updatedProduct.quantity;
-  } else {
-      existingCartItems.push(updatedProduct);
+    function addToCart(){
+      const cantProd = document.getElementById("product-detail-container-order-params__num")        
+      const newOrder = {
+          image: product.image,
+          name: product.name,
+          price: product.price,
+          cant: parseInt(cantProd.value),
+          total: parseInt(cantProd.value) * parseInt(product.price)
+          
+      }
+      
+      const prod = Order.find((prod)=>{
+        if(prod.name === product.name){
+          prod.cant = parseInt(prod.cant) + parseInt(cantProd.value);
+          prod.total = prod.cant * parseInt(prod.price);
+          return prod;
+        }
+      })
+  
+      if(!prod) {
+        Order.push(newOrder);
+      }
+  
+  // //Guardarlo en el local storage
+  localStorage.setItem('order',JSON.stringify( Order));
+  
+  contarProductos();
+  
+  //Alerta de Producto agregado
+  showAlert('Producto agregado a la Orden','exito');
+  
   }
-  sessionStorage.setItem('order', JSON.stringify(existingCartItems));
-
-
-  window.location.replace("/pages/order/order.html");
-};
+  
+  function comprarOrden(){
+  
+    const existe = Order.find((prod)=>{
+      if(product.name === product.name){
+            return prod;
+      }
+    })
+    if(!existe)
+       agregarOrden();
+    window.location.href = "/pages/order/order.html";
+  
+  }

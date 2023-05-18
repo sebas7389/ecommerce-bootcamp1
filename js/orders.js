@@ -1,76 +1,52 @@
-function renderizarOrder(){
+//Guardo la orden del local storage en la variable Products
+let Products = JSON.parse(localStorage.getItem('order')) || [];
 
-  let totalOrden = 0;
-  const tableBody = document.getElementById('order-table_body');
-  
-  if (!tableBody) {
-    console.error("No se encontró el elemento con id 'order-table_body'");
-    return;
-  }
-  
 
-    tableBody.innerHTML = ''//lo que hace esto o para lo que está es para que cada vez que se cargue la funcion, se borre toda la tabla
-    if(Order.length === 0) {
-        tableBody.innerHTML = '<tr class="disable"> <td coldspan = 6>NO SE ENCONTRARON PRODUCTOS </td></tr>';//colspan es para que ocupe hasta cierta cantidad de columnas
+//Tabla de productos
+const tableBody = document.getElementById('order-table_body');
+const submitBtn = document.getElementById('admin-product__submit-btn');
+const productForm = document.getElementById('admin-product-form');
+
+let editIndex;
+
+function renderizarTabla(){
+    let totalOrden = 0;
+    tableBody.innerHTML = ''
+    if(Products.length === 0) {
+        tableBody.innerHTML = '<tr class="disable"> <td coldspan = 6>NO SE ENCONTRARON PRODUCTOS </td></tr>';
         return;
     }
     
-     // Agrupar productos por nombre
-     const groupedProducts = Order.reduce((acc, curr) => {
-      if (!acc[curr.name]) {
-        acc[curr.name] = {
-          ...curr,
-          quantity: 0,
-          total: 0
-        };
-      }
-      acc[curr.name].quantity += curr.quantity;
-      acc[curr.name].total += curr.total;
-      return acc;
-    }, {});
-
-
-const productArray = Object.values(groupedProducts);
-let suma = 0
-
-    productArray.forEach((producto,index)=>{
-        let imageSrc = producto.image ? producto.image : '/assets/images/funciones-pagina/not-found.webp';
-
+    Products.forEach((producto,index)=>{
+        let imageSrc = '/assest/image/no-product.png';
+       if(producto.image) 
+            imageSrc  = producto.image;
        const tableRow = `
-       <tr class="order-product">
-       <td class="order-product__img-cell">
-           <img class= "order-product__img" src="${imageSrc}" width="120px" alt="${producto.name}">                    
-       </td>
-       <td class= "order-product__name">
-           ${producto.name}
-       </td>
-       <td class="order-product__quantity quantity-product">
-         <button class="quantity-order-product__btn" id="restar" data-index="${index}" onclick="decreaseQuantity(event, ${index})">
-             -
-         </button>
-         <input type="number" class="quantity-product__input" value=${producto.quantity} data-index="${index}">    
-         <button class="quantity-order-product__btn" id="sumar" data-index="${index}" onclick="increaseQuantity(event, ${index})">
-             +
-         </button>
-       </td>
-       <td class="product__price" id="total-pedido-${index}">
-         $ ${producto.price * producto.quantity}
-       </td>        
-       <td class= "product__actions">
-           <button class="product__action-btn" onclick="deleteProduct(${index})"> 
-               <i class="fa-solid fa-trash-can"></i>
-           </button>
-       </td>
-   </tr> `
-
-
+       <tr>
+                <td><img class= "order__img" src="${imageSrc}" alt="${producto.name}" width="80px"></td>
+                <td>${producto.name}</td>
+                <td class="order__price">$ ${producto.price}</td>
+                <td class="order__cant">
+                <div class="order-cant-btn">
+                <button class="order-cant-btn__decrement" onclick="decrement('${index}')"
+                id="order-cant-btn__decrement" >-</button>
+                <input class="order-cant-btn__input" id="order-cant-input${index}" type="text" 
+                       value="${producto.cant}" onchange="updateTotal('${index}')">
+                <button class="order-cant-btn__increment" onclick="increment('${index}')"
+                id="order-cant-btn__increment">+</button>
+                </div>
+                </td>
+                <td class="order__total">$ ${producto.total}
+                <button class= "order__delete-btn" onclick= "deleteProduct(${index})" >
+                <i class="fa-regular fa-trash-can"></i>
+                </button></td>
+                
+                </td>
+            </tr>
+       ` 
        tableBody.innerHTML += tableRow; 
-       suma += producto.price * producto.quantity;
-       totalOrden = Math.round(suma *100) /100;
-       console.log (totalOrden)
+       totalOrden += producto.total;
     })
-
-    updateTotal();
     const tableRow = `
         <tr>
                 <td class="order-import-total" colspan = '4'>
@@ -82,10 +58,9 @@ let suma = 0
         </tr>
        ` 
        tableBody.innerHTML += tableRow; 
-       
-       renderizarTabla();
 }
 
+renderizarTabla();
 
 
 function deleteProduct(id){
@@ -102,15 +77,15 @@ function deleteProduct(id){
 function finalizarCompra(){
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   if(!currentUser){
-    showAlert('Debe estar logueado para poder Finalizar la compra','advertencia')
+    showAlert('Debe estar logueado para poder Finalizar la compra','info')
   } 
   else{
-    if(Order.length === 0){
-      showAlert('Debe seleccionar un producto para poder Finalizar la compra','advertencia')
+    if(Products.length === 0){
+      showAlert('Debe seleccionar un producto para poder Finalizar la compra','info')
     }else{
       localStorage.removeItem('order')
-      Order = []; //Vacia el carrito
-      renderizarTabla(); //Renderizar la orden antes de eliminar el contenido del carrito
+      Products = [];
+      renderizarTabla();
       showAlert('Compra Finalizada','exito')
       contarProductos();
     }

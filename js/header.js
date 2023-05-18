@@ -26,7 +26,7 @@ let Products = JSON.parse(localStorage.getItem("Products"));
             description:" - Monitor Curvo Gamer TUF Gaming VG24VQ, 23.6 pulgadas Full HD (1920 x 1080), 144Hz, Extreme Low Motion Blur™, FreeSync™, 1ms (MPRT), Monitor de juegos 1500R Full HD de 23.6 pulgadas",
             image:"https://fullh4rd.com.ar/img/productos/Pics_Prod/monitor-24-asus-vg24vq-curvo-gaming-144hz-audio-0.jpg",
             name:"MONITOR 24 ASUS VG24VQ CURVO GAMING 144HZ AUDIO",
-            price:24900},
+            price:249000},
 
             {
             date:"2023-05-02",
@@ -80,7 +80,7 @@ function actualizarBadge() {
 
 
     badgeHTML.innerText = totalQuantity
-    
+
     actualizarBadge()
 }
 

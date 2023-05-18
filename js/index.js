@@ -1,6 +1,4 @@
 cardContainer = document.getElementById('card-container');
-// Products = JSON.parse(localStorage.getItem("Products")) || [];
-
 function renderizarProductos(productsL) {
 
     cardContainer.innerHTML = ``;
@@ -43,9 +41,9 @@ function renderizarProductos(productsL) {
                         </a>
                     </div>  
                     <div class="card__btn-container">
-                        <button onclick="agregarOrden(${index})" class="card__btn" >
-                            Comprar
-                        </button>
+                    <a class="card__btn" href="/" onclick="addToCart(event, ${index})">
+                    Comprar
+                    </a>
                     </div>
                 </div>
             </article>`
@@ -72,28 +70,38 @@ function searchProduct() {
 
 
 
-function addToCart(event, productId) {
-    event.preventDefault();
-
-    const product = Products[productId];
-
-    // Buscar si el producto ya está en el carrito
-    const index = Order.findIndex(item => item.name === product.name);
-
-    if (index !== -1) { // Si el producto ya está en el carrito, aumentar su cantidad
-        Order[index].quantity++;
-    } else { // Si el producto no está en el carrito, agregarlo con cantidad 1
-        const newProduct = {
-            ...product,
-            quantity: 1
-        };
-        Order.push(newProduct);
+function addToCart(id){
+    const product = products[id];
+        
+    const newOrder = {
+        image: product.image,
+        name: product.name,
+        price: product.price,
+        cant: 1,
+        total: product.price
+        
     }
+        
+    const prod = Order.find((prod)=>{
+        if(prod.name === product.name){
+          prod.cant = parseInt(prod.cant) + 1 ;
+          prod.total = prod.cant * parseInt(prod.price);
+          return prod;
+        }
+      })
+  
+      if(!prod) {
+        Order.push(newOrder);
+      }
 
-    // Guardar el carrito actualizado en el localStorage
-    sessionStorage.setItem("order", JSON.stringify(Order));
-    console.log(Order);
-    window.location.replace("/pages/order/order.html");
+//Guardarlo en el local storage
+localStorage.setItem('order',JSON.stringify( Order));
+
+//Alerta de Producto agregado
+showAlert('Producto agregado al carrito','exito')
+
+contarProductos();
+
 }
 
 
